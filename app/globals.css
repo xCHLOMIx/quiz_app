@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f048;
-  --foreground: #000000;
+  --background: #faf4b7;
+  --foreground: #111111;
 }
 
 @theme inline {
@@ -12,25 +12,21 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* ::-webkit-scrollbar {
-  width: 4px;
-  display: block;
-  background-color: var(--muted);
-  border-left: 1px solid var(--border);
-} */
-
 ::-webkit-scrollbar {
-  width: 12px;
-  background-color: var(--muted);
-  border-left: 4px solid black;
+  width: 10px;
+  background-color: var(--background);
+  border-left: 2px solid #111111;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: black;
+  background: #111111;
+  border-radius: 4px;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: radial-gradient(#111111 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
   color: var(--foreground);
   font-family: var(--font-sans);
 }

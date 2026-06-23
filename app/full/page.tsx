@@ -99,14 +99,14 @@ export default function FullModePage() {
 
   if (!currentQuestion && completed >= total) {
     return (
-      <main className="min-h-screen bg-[#54d66a] px-4 py-8 text-black sm:px-6">
-        <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-3xl items-center">
-          <section className="w-full border-4 border-black bg-white p-6 shadow-[8px_8px_0_#000] sm:p-10">
-            <h1 className="text-4xl font-black uppercase sm:text-4xl">You completed all questions!</h1>
-            <p className="mt-6 text-xl font-black">
+      <main className="min-h-screen bg-[#72e283]/20 backdrop-blur-[2px] px-4 py-8 text-black sm:px-6 flex items-center justify-center">
+        <div className="w-full max-w-2xl">
+          <section className="w-full border-2 border-black bg-white p-6 shadow-[4px_4px_0_#111111] sm:p-8 rounded-2xl">
+            <h1 className="text-2xl font-black uppercase sm:text-3xl">You completed all questions!</h1>
+            <p className="mt-4 text-lg font-black">
               Completed: {total} / {total}
             </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
               <ModeButton href="/" variant="blue">
                 Back to Home
               </ModeButton>
@@ -121,12 +121,12 @@ export default function FullModePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#6ecbff] px-4 py-6 text-black sm:px-6">
-      <div className="mx-auto w-full max-w-4xl space-y-6">
-        <header className="flex flex-col gap-4 border-4 border-black bg-white p-4 shadow-[6px_6px_0_#000] sm:flex-row sm:items-center sm:justify-between">
+    <main className="min-h-screen bg-[#8cd8ff]/20 backdrop-blur-[2px] px-4 py-6 text-black sm:px-6 flex justify-center">
+      <div className="w-full max-w-2xl space-y-4">
+        <header className="flex flex-col gap-3 border-2 border-black bg-white p-3.5 shadow-[3px_3px_0_#111111] rounded-xl sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="font-black uppercase">Full Mode</p>
-            <h1 className="text-3xl font-black uppercase">Master every question</h1>
+            <p className="text-xs font-black uppercase text-zinc-500">Full Mode</p>
+            <h1 className="text-xl sm:text-2xl font-black uppercase leading-tight">Master every question</h1>
           </div>
           <ModeButton href="/" variant="yellow">
             Back to Home
@@ -137,17 +137,20 @@ export default function FullModePage() {
 
         {feedback ? (
           <div
-            className={`border-4 border-black p-4 text-xl font-black uppercase shadow-[4px_4px_0_#000] ${feedback === "correct" ? "bg-[#54d66a]" : "bg-[#ff7aa2]"
-              }`}
+            className={`border-2 border-black p-3.5 text-md sm:text-lg font-black uppercase rounded-xl shadow-[3px_3px_0_#111111] ${
+              feedback === "correct" ? "bg-[#72e283]" : "bg-[#ff9bb9]"
+            }`}
           >
             {feedback === "correct" ? "Correct!" : "Incorrect. Review the correct answer."}
           </div>
         ) : null}
 
         {feedback === "incorrect" ? (
-          <ModeButton onClick={handleContinueAfterIncorrect} variant="yellow">
-            Next Question
-          </ModeButton>
+          <div className="flex w-full justify-end">
+            <ModeButton onClick={handleContinueAfterIncorrect} variant="yellow">
+              Next Question
+            </ModeButton>
+          </div>
         ) : null}
 
         {currentQuestion ? (

@@ -8,16 +8,16 @@ export function ProgressBar({ value, total, label }: ProgressBarProps) {
   const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
 
   return (
-    <div className="space-y-2">
-      <div className="flex items-center justify-between gap-4 text-sm font-black uppercase">
+    <div className="space-y-1.5">
+      <div className="flex items-center justify-between gap-4 text-xs font-black uppercase tracking-wider text-black">
         <span>{label ?? "Progress"}</span>
         <span>
-          {value} / {total}
+          {value} / {total} ({percentage}%)
         </span>
       </div>
-      <div className="h-7 overflow-hidden border-4 border-black bg-white">
+      <div className="h-5 overflow-hidden border-2 border-black bg-white rounded-full">
         <div
-          className="h-full border-r-4 border-black bg-[#54d66a]"
+          className="h-full border-r-2 border-black bg-[#54d66a] transition-all duration-300 ease-out rounded-full"
           style={{ width: `${Math.min(100, Math.max(0, percentage))}%` }}
         />
       </div>

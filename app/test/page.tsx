@@ -54,8 +54,8 @@ export default function TestModePage() {
 
   if (showResults) {
     return (
-      <main className="min-h-screen bg-[#f7f048] px-4 py-8 text-black sm:px-6">
-        <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-3xl items-center">
+      <main className="min-h-screen bg-[#faf4b7]/20 backdrop-blur-[2px] px-4 py-8 text-black sm:px-6 flex items-center justify-center">
+        <div className="w-full max-w-2xl">
           <ResultsScreen onRetry={startTest} score={score} total={questions.length} />
         </div>
       </main>
@@ -63,12 +63,12 @@ export default function TestModePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#ff7aa2] px-4 py-6 text-black sm:px-6">
-      <div className="mx-auto w-full max-w-4xl space-y-6">
-        <header className="flex flex-col gap-4 border-4 border-black bg-white p-4 shadow-[6px_6px_0_#000] sm:flex-row sm:items-center sm:justify-between">
+    <main className="min-h-screen bg-[#ff9bb9]/20 backdrop-blur-[2px] px-4 py-6 text-black sm:px-6 flex justify-center">
+      <div className="w-full max-w-2xl space-y-4">
+        <header className="flex flex-col gap-3 border-2 border-black bg-white p-3.5 shadow-[3px_3px_0_#111111] rounded-xl sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="font-black uppercase">Test Mode</p>
-            <h1 className="text-3xl font-black uppercase">
+            <p className="text-xs font-black uppercase text-zinc-500">Test Mode</p>
+            <h1 className="text-xl sm:text-2xl font-black uppercase leading-tight">
               Question {Math.min(currentIndex + 1, questions.length)} / {questions.length}
             </h1>
           </div>
@@ -88,7 +88,7 @@ export default function TestModePage() {
           />
         ) : null}
 
-        <nav className="grid gap-4 sm:grid-cols-3">
+        <nav className="grid gap-3 sm:grid-cols-3">
           <ModeButton
             onClick={() => setCurrentIndex((index) => Math.max(0, index - 1))}
             variant="white"
@@ -109,7 +109,7 @@ export default function TestModePage() {
         </nav>
 
         {!canFinish ? (
-          <p className="border-4 border-black bg-white p-3 text-center font-black shadow-[4px_4px_0_#000]">
+          <p className="border-2 border-black bg-white p-2.5 text-center text-sm font-black rounded-xl shadow-[3px_3px_0_#111111]">
             Answer all questions before viewing results.
           </p>
         ) : null}

@@ -29,14 +29,14 @@ export default function LandingPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f7f048] px-4 py-8 text-black sm:px-6">
-      <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-4xl flex-col justify-center gap-6">
-        <section className="border-4 border-black bg-white p-6 shadow-[8px_8px_0_#000] sm:p-10">
-          <p className="mb-3 inline-block border-4 border-black bg-[#ff7aa2] px-3 py-1 text-sm font-black uppercase">
+    <main className="min-h-screen px-4 py-8 text-black sm:px-6 flex items-center justify-center">
+      <div className="w-full max-w-2xl flex flex-col gap-5 py-4">
+        <section className="border-2 border-black bg-white p-5 shadow-[4px_4px_0_#111111] sm:p-7 rounded-2xl">
+          <p className="mb-2.5 inline-block border-2 border-black bg-[#ff7aa2] px-2.5 py-0.5 text-xs font-black uppercase rounded-lg">
             Choose your mode
           </p>
-          <h1 className="text-6xl font-black uppercase leading-none sm:text-6xl">Quiz App</h1>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <h1 className="text-4xl font-black uppercase leading-none sm:text-5xl">Quiz App</h1>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <ModeButton href="/full" variant="green">
               Full Mode
             </ModeButton>
@@ -46,16 +46,16 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="border-4 border-black bg-[#6ecbff] p-5 shadow-[6px_6px_0_#000] sm:p-7">
-          <h2 className="mb-5 text-3xl font-black uppercase">Full Mode Summary</h2>
+        <section className="border-2 border-black bg-[#6ecbff] p-5 shadow-[4px_4px_0_#111111] sm:p-6 rounded-2xl">
+          <h2 className="mb-4 text-2xl font-black uppercase">Full Mode Summary</h2>
           <ProgressBar label="Completed" total={total} value={completed} />
-          <div className="mt-5 grid gap-2 text-xl font-black">
+          <div className="mt-4 grid gap-1 text-lg font-black">
             <p>
               Completed: {completed} / {total}
             </p>
             <p>Remaining: {remaining}</p>
           </div>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {completed > 0 ? (
               <ModeButton href="/full" variant="green">
                 Continue Full Mode

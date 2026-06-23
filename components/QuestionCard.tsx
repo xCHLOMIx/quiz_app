@@ -19,22 +19,22 @@ export function QuestionCard({
   disabled = false,
 }: QuestionCardProps) {
   return (
-    <section className="border-4 border-black bg-white p-5 shadow-[6px_6px_0_#000] sm:p-7">
-      <div className="space-y-5">
-        <p className="text-xl font-black leading-snug text-black sm:text-2xl">
+    <section className="border-2 border-black bg-white p-4 sm:p-6 rounded-2xl shadow-[4px_4px_0_#111111]">
+      <div className="space-y-4">
+        <p className="text-lg sm:text-xl font-black leading-snug text-black">
           {question.questionText}
         </p>
         {question.questionImage ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            className="max-h-64 w-full border-4 border-black py-4 bg-white object-contain"
+            className="max-h-56 w-full border-2 border-black py-3 bg-white object-contain rounded-xl"
             src={question.questionImage}
             alt="Question reference"
           />
         ) : null}
       </div>
 
-      <div className="mt-6 grid gap-4">
+      <div className="mt-5 grid gap-3">
         {choices.map((choice, index) => {
           const isSelected = selectedChoice === choice;
           const state = revealAnswer
