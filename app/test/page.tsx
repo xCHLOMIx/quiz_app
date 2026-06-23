@@ -1,0 +1,119 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import type { QuizChoice, QuizQuestion } from "@/data/questions";
+import { ModeButton } from "@/components/ModeButton";
+import { ProgressBar } from "@/components/ProgressBar";
+import { QuestionCard } from "@/components/QuestionCard";
+import { ResultsScreen } from "@/components/ResultsScreen";
+import { getRandomQuestions, shuffleArray } from "@/lib/quiz";
+
+type TestQuestion = QuizQuestion & {
+  shuffledChoices: QuizChoice[];
+};
+
+function createTestQuestions(): TestQuestion[] {
+  return getRandomQuestions(20).map((question) => ({
+    ...question,
+    shuffledChoices: shuffleArray(question.choices),
+  }));
+}
+
+export default function TestModePage() {
+  const [questions, setQuestions] = useState<TestQuestion[]>(createTestQuestions);
+  const [answers, setAnswers] = useState<(QuizChoice | null)[]>(() =>
+    Array.from({ length: Math.min(20, createTestQuestions().length) }, () => null),
+  );
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showResults, setShowResults] = useState(false);
+
+  function startTest() {
+    const nextQuestions = createTestQuestions();
+
+    setQuestions(nextQuestions);
+    setAnswers(Array.from({ length: nextQuestions.length }, () => null));
+    setCurrentIndex(0);
+    setShowResults(false);
+  }
+
+  const answeredCount = answers.filter(Boolean).length;
+  const currentQuestion = questions[currentIndex];
+  const score = useMemo(
+    () => answers.reduce((total, answer) => total + (answer?.correct ? 1 : 0), 0),
+    [answers],
+  );
+  const canFinish = questions.length > 0 && answeredCount === questions.length;
+
+  function handleSelect(choice: QuizChoice) {
+    setAnswers((currentAnswers) => {
+      const nextAnswers = [...currentAnswers];
+      nextAnswers[currentIndex] = choice;
+      return nextAnswers;
+    });
+  }
+
+  if (showResults) {
+    return (
+      <main className="min-h-screen bg-[#f7f048] px-4 py-8 text-black sm:px-6">
+        <div className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-3xl items-center">
+          <ResultsScreen onRetry={startTest} score={score} total={questions.length} />
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="min-h-screen bg-[#ff7aa2] px-4 py-6 text-black sm:px-6">
+      <div className="mx-auto w-full max-w-4xl space-y-6">
+        <header className="flex flex-col gap-4 border-4 border-black bg-white p-4 shadow-[6px_6px_0_#000] sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-black uppercase">Test Mode</p>
+            <h1 className="text-3xl font-black uppercase">
+              Question {Math.min(currentIndex + 1, questions.length)} / {questions.length}
+            </h1>
+          </div>
+          <ModeButton href="/" variant="yellow">
+            Back to Home
+          </ModeButton>
+        </header>
+
+        <ProgressBar label="Answered" total={questions.length} value={answeredCount} />
+
+        {currentQuestion ? (
+          <QuestionCard
+            choices={currentQuestion.shuffledChoices}
+            onSelect={handleSelect}
+            question={currentQuestion}
+            selectedChoice={answers[currentIndex]}
+          />
+        ) : null}
+
+        <nav className="grid gap-4 sm:grid-cols-3">
+          <ModeButton
+            onClick={() => setCurrentIndex((index) => Math.max(0, index - 1))}
+            variant="white"
+            disabled={currentIndex === 0}
+          >
+            Previous
+          </ModeButton>
+          <ModeButton
+            onClick={() => setCurrentIndex((index) => Math.min(questions.length - 1, index + 1))}
+            variant="blue"
+            disabled={currentIndex >= questions.length - 1}
+          >
+            Next
+          </ModeButton>
+          <ModeButton onClick={() => setShowResults(true)} variant="green" disabled={!canFinish}>
+            Finish Test
+          </ModeButton>
+        </nav>
+
+        {!canFinish ? (
+          <p className="border-4 border-black bg-white p-3 text-center font-black shadow-[4px_4px_0_#000]">
+            Answer all questions before viewing results.
+          </p>
+        ) : null}
+      </div>
+    </main>
+  );
+}

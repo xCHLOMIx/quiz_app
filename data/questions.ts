@@ -1198,7 +1198,11 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "toni 20"
       },
       {
-        "text": "toni 16 ( c) toni 12"
+        "text": "toni 16"
+      },
+      {
+        "text": "toni 12",
+        "correct": true
       },
       {
         "text": "toni 10"
@@ -3643,8 +3647,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Igihe ukurikiwe n’ikinyabiziga gitwara abarwayi gicanye amatara y’intabaza arabagirana. Wakora iki?",
     "choices": [
       {
-        "text": "Kugihigamira ako kanya ndetse byaba ngombwa ugahagarara b. Kongera umuvuduko kugirango ugisige c. Kugumana umuvuduko wari ufite d. Guhagarara bitunguranye mu muhanda",
+        "text": "Kugihigamira ako kanya ndetse byaba ngombwa ugahagarara",
         "correct": true
+      },
+      {
+        "text": "Kongera umuvuduko kugirango ugisige"
+      },
+      {
+        "text": "Kugumana umuvuduko wari ufite"
+      },
+      {
+        "text": "Guhagarara bitunguranye mu muhanda"
       }
     ]
   },
@@ -3710,17 +3723,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Uri hafi kunyura k’umuyobozi w’ikinyamitende. Muri ibi byapa bikurikira nikihe wakwitondera?",
     "choices": [
       {
-        "image": "/img/img72.jpg"
+        "image": "/image/img72.jpg"
       },
       {
-        "image": "/img/img74.jpg"
+        "image": "/image/img74.jpg"
       },
       {
-        "image": "/img/img75.jpg",
+        "image": "/image/img75.jpg",
         "correct": true
       },
       {
-        "image": "/img/img79.jpg"
+        "image": "/image/img79.jpg"
       }
     ]
   },
@@ -3830,8 +3843,14 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "Kunyuranaho gusa, ntugaruke iburyo bwawe"
       },
       {
-        "text": "Kunyuranaho cyangwa ugakatira ibumoso c. Hemerewe kugenda imodoka zihuta gusa d. Gukatira iburyo gusa utanyuranyeho",
+        "text": "Kunyuranaho cyangwa ugakatira ibumoso",
         "correct": true
+      },
+      {
+        "text": "Hemerewe kugenda imodoka zihuta gusa"
+      },
+      {
+        "text": "Gukatira iburyo gusa utanyuranyeho"
       }
     ]
   },
@@ -3840,8 +3859,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Ni hehe byemewe kunyuranaho munzira y’icyerekezo kimwe?",
     "choices": [
       {
-        "text": "ku gisate kiri Ibumoso bw’umuhanda b. Kunyuranaho ntibyemewe c. Ku gisate kiri iburyo bw’umuhanda gusa d. Ku gisate cy’ibumoso cyangwa iburyo",
+        "text": "ku gisate kiri Ibumoso bw’umuhanda",
         "correct": true
+      },
+      {
+        "text": "Kunyuranaho ntibyemewe"
+      },
+      {
+        "text": "Ku gisate kiri iburyo bw’umuhanda gusa"
+      },
+      {
+        "text": "Ku gisate cy’ibumoso cyangwa iburyo"
       }
     ]
   },
@@ -3870,8 +3898,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionImage": "/image/img85.jpg",
     "choices": [
       {
-        "text": "Iherezo ry’ibibuzwa byose mu karere ku binyabiziga bigenda b. Ntihemerewe kuhahagarara c. Umuvuduko ntarengwa wemewe d. Nta gisubizo cy’ukuri kirimo",
+        "text": "Iherezo ry’ibibuzwa byose mu karere ku binyabiziga bigenda",
         "correct": true
+      },
+      {
+        "text": "Ntihemerewe kuhahagarara"
+      },
+      {
+        "text": "Umuvuduko ntarengwa wemewe"
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri kirimo"
       }
     ]
   },
@@ -3880,17 +3917,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Ibyapa bitegeka bikozwe muyihe shusho?",
     "choices": [
       {
-        "image": "/img/img88.jpg"
+        "image": "/image/img88.jpg"
       },
       {
-        "image": "/img/img89.jpg"
+        "image": "/image/img89.jpg"
       },
       {
-        "image": "/img/img90.jpg",
+        "image": "/image/img90.jpg",
         "correct": true
       },
       {
-        "image": "/img/img91.jpg"
+        "image": "/image/img91.jpg"
       }
     ]
   },
@@ -3899,17 +3936,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Nikihe cyapa cyerekena ko nta kinyabiziga gifite moteri cyemerewe kuhanyura?",
     "choices": [
       {
-        "image": "/img/img92.jpg"
+        "image": "/image/img92.jpg"
       },
       {
-        "image": "/img/img93.jpg",
+        "image": "/image/img93.jpg",
         "correct": true
       },
       {
-        "image": "/img/img94.jpg"
+        "image": "/image/img94.jpg"
       },
       {
-        "image": "/img/img95.jpg"
+        "image": "/image/img95.jpg"
       }
     ]
   },
@@ -3945,8 +3982,11 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "Iherezo ry’ibyo wabuzwaga"
       },
       {
-        "text": "Guhagarara umwanya munini n’umwanya moto ntibyemewe d.Birabujijwe kuhinjira",
+        "text": "Guhagarara umwanya munini n’umwanya moto ntibyemewe",
         "correct": true
+      },
+      {
+        "text": "Birabujijwe kuhinjira"
       }
     ]
   },
@@ -4155,16 +4195,16 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Icyapa gitanga uburenganzira bwo gutambuka mbere kigira iyihe shusho?",
     "choices": [
       {
-        "image": "/img/img116.jpg"
+        "image": "/image/img116.jpg"
       },
       {
-        "image": "/img/img117.jpg"
+        "image": "/image/img117.jpg"
       },
       {
-        "image": "/img/img118.jpg"
+        "image": "/image/img118.jpg"
       },
       {
-        "image": "/img/img119.jpg",
+        "image": "/image/img119.jpg",
         "correct": true
       }
     ]
@@ -4235,6 +4275,9 @@ export const quizQuestions: QuizQuestion[] = [
     "questionImage": "/image/img123.jpg",
     "choices": [
       {
+        "text": ""
+      },
+      {
         "text": "Hagarara kereste niba ushaka gukata ibumoso Hagarara niba ubona ntabyago byaguteza"
       },
       {
@@ -4292,8 +4335,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionImage": "/image/img128.jpg",
     "choices": [
       {
-        "text": "Birabujijwe kuwurenga a. Birabujijwe kuhahagarara b. Wegereye ahaguteza ibyago c. Kunyuranaho ntibyemewe",
+        "text": "Birabujijwe kuwurenga",
         "correct": true
+      },
+      {
+        "text": "Birabujijwe kuhahagarara"
+      },
+      {
+        "text": "Wegereye ahaguteza ibyago"
+      },
+      {
+        "text": "Kunyuranaho ntibyemewe"
       }
     ]
   },
@@ -4349,8 +4401,11 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "Imbere ipine ryapfumutse."
       },
       {
-        "text": "Ahegereye icyago kidasobanuye ukundi. d. Imbere hari hatangirwa serivisi.",
+        "text": "Ahegereye icyago kidasobanuye ukundi.",
         "correct": true
+      },
+      {
+        "text": "Imbere hari hatangirwa serivisi."
       }
     ]
   },
@@ -4365,8 +4420,11 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "Imbere hari inzira ya gari ya moshi."
       },
       {
-        "text": "Ahegereye amasangano y’inzira nyabagendwa n’inzira ya gari ya moshi hatabambiye d. Inkomane ibambiye.",
+        "text": "Ahegereye amasangano y’inzira nyabagendwa n’inzira ya gari ya moshi hatabambiye",
         "correct": true
+      },
+      {
+        "text": "Inkomane ibambiye."
       }
     ]
   },
@@ -4471,19 +4529,24 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Umuyobozi w’ikinyabizaga cy’ikoreye ibintu bishobora gufata inkongi, n’ikihe cyapa cyerekana ko ibyo atwaye biturika by’afata inkongi?",
     "choices": [
       {
-        "image": "/img/img140.jpg"
+        "image": "/image/img140.jpg"
       },
       {
-        "image": "/img/img143.jpg",
+        "image": "/image/img143.jpg",
         "correct": true
       },
       {
-        "image": "/img/img144.jpg"
+        "image": "/image/img144.jpg"
       },
       {
-        "image": "/img/img145.jpg",
-        "text": "267.Wakoze impanuka yo mu muhanda , ni ikihe cyangombwa polisi ishobora kugusaba kucyerekana?"
-      },
+        "image": "/image/img145.jpg"
+      }
+    ]
+  },
+  {
+    "id": 267,
+    "questionText": "Wakoze impanuka yo mu muhanda , ni ikihe cyangombwa polisi ishobora kugusaba kucyerekana?",
+    "choices": [
       {
         "text": "Icyemezo cy’iyandikwa ryi ikinyabiziga"
       },
@@ -4924,38 +4987,74 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Mugihe ikinyabiziga cyacu bakinyuzeho",
     "choices": [
       {
-        "text": "Tugomba kugabanya umuvuduko b. Tugomba kongera umuvuduko c. Tugomba kongera umuvuduko n’ubwitonzi d. Nta gisubizo cy’ ukuri kirimo",
+        "text": "Tugomba kugabanya umuvuduko",
         "correct": true
+      },
+      {
+        "text": "Tugomba kongera umuvuduko"
+      },
+      {
+        "text": "Tugomba kongera umuvuduko n’ubwitonzi"
+      },
+      {
+        "text": "Nta gisubizo cy’ ukuri kirimo"
       }
     ]
   },
   {
     "id": 290,
-    "questionText": "Ntibyemewe gukoresha telephone a. Mu biro bya leta b. Mu biro bya Polisi",
+    "questionText": "Ntibyemewe gukoresha telephone",
     "choices": [
       {
-        "text": "Igihe utwaye ikinyabiziga d. Ibisubizo byose ni ukuri",
+        "text": "Mu biro bya leta"
+      },
+      {
+        "text": "Mu biro bya Polisi"
+      },
+      {
+        "text": "Igihe utwaye ikinyabiziga",
         "correct": true
+      },
+      {
+        "text": "Ibisubizo byose ni ukuri"
       }
     ]
   },
   {
     "id": 291,
-    "questionText": "Mbere yo kunyura ku kindi kinyabiziga, ni ngombwa kumenya ko: a. Nta kindi kinyabiziga kinturutse inyuma",
+    "questionText": "Mbere yo kunyura ku kindi kinyabiziga, ni ngombwa kumenya ko:",
     "choices": [
       {
-        "text": "Umuhanda ubona neza, no kwitondera kunyuranaho c. Ikinyabiziga kinturutse imbere gishaka gukatira I buumoso d. Nta gisubizo cy’ukuri",
+        "text": "Nta kindi kinyabiziga kinturutse inyuma"
+      },
+      {
+        "text": "Umuhanda ubona neza, no kwitondera kunyuranaho",
         "correct": true
+      },
+      {
+        "text": "Ikinyabiziga kinturutse imbere gishaka gukatira I buumoso"
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri"
       }
     ]
   },
   {
     "id": 292,
-    "questionText": "Ikindi kinyabiziga kiguturutse inyuma kiguterera amatara y’urumuri rumyasa, wakora iki? a. Kongera umuvuduko kugira ngo intera iri hagati yawe n’ukuri inyuma igumeho b. Fata feri y’urugendo kugira ngo umwereke ko ugiye guhagarara",
+    "questionText": "Ikindi kinyabiziga kiguturutse inyuma kiguterera amatara y’urumuri rumyasa, wakora iki?",
     "choices": [
       {
-        "text": "Emerera icyo kinyabiziga kugutambukaho niba imbere ntacyago gihari d. Nta gisubizo cy’ukuri kirimo",
+        "text": "Kongera umuvuduko kugira ngo intera iri hagati yawe n’ukuri inyuma igumeho"
+      },
+      {
+        "text": "Fata feri y’urugendo kugira ngo umwereke ko ugiye guhagarara"
+      },
+      {
+        "text": "Emerera icyo kinyabiziga kugutambukaho niba imbere ntacyago gihari",
         "correct": true
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri kirimo"
       }
     ]
   },
@@ -4964,35 +5063,71 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Mu gihe Umuntu ufite ubumuga bwo kutabona yambuka umuhanda yitwaje inkoni yera y’abatabona:",
     "choices": [
       {
-        "text": "Umuyobozi w’ikinyabiziga agomba gufata iyo nkoni nk’icyapa kimumenyesha ko agomba guhagarara b. Vuza ihoni ukomeze c. Gabanya nurangiza ukomeze witonze d. Ibisubizo byose ni ukuri",
+        "text": "Umuyobozi w’ikinyabiziga agomba gufata iyo nkoni nk’icyapa kimumenyesha ko agomba guhagarara",
         "correct": true
+      },
+      {
+        "text": "Vuza ihoni ukomeze"
+      },
+      {
+        "text": "Gabanya nurangiza ukomeze witonze"
+      },
+      {
+        "text": "Ibisubizo byose ni ukuri"
       }
     ]
   },
   {
     "id": 294,
-    "questionText": "Amatara y’urugendo, mu gihe cy’ibihu: a. Ni meza kuko atuma ureba kure",
+    "questionText": "Amatara y’urugendo, mu gihe cy’ibihu:",
     "choices": [
       {
-        "text": "Ni mabi kuko arakugarukira akaguhuma amaso c. Akwizeza ko abandi bakubona d. Nta gisubizo cy’ukuri",
+        "text": "Ni meza kuko atuma ureba kure"
+      },
+      {
+        "text": "Ni mabi kuko arakugarukira akaguhuma amaso",
         "correct": true
+      },
+      {
+        "text": "Akwizeza ko abandi bakubona"
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri"
       }
     ]
   },
   {
     "id": 295,
-    "questionText": "Gutwara uzungazunga mu muhanda: a. Ni bibi ku kinyabiziga cy’imitende ibiri",
+    "questionText": "Gutwara uzungazunga mu muhanda:",
     "choices": [
       {
-        "text": "Ni bibi igihe cyose c. Ni bibi ku kinyabiziga cy’imitende ine d. Nta gisubizo cy’ukuri",
+        "text": "Ni bibi ku kinyabiziga cy’imitende ibiri"
+      },
+      {
+        "text": "Ni bibi igihe cyose",
         "correct": true
+      },
+      {
+        "text": "Ni bibi ku kinyabiziga cy’imitende ine"
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri"
       }
     ]
   },
   {
     "id": 296,
-    "questionText": "Telephone ngendanwa ntigomba gukoreshwa: a. Ahari ibimenyetso bimurika b. Igihe utwaye ikinyabiziga Ku muvuduko wa 20km/h c. A na B ni ibisubizo by’ukuri",
+    "questionText": "Telephone ngendanwa ntigomba gukoreshwa:",
     "choices": [
+      {
+        "text": "Ahari ibimenyetso bimurika"
+      },
+      {
+        "text": "Igihe utwaye ikinyabiziga Ku muvuduko wa 20km/h"
+      },
+      {
+        "text": "A na B ni ibisubizo by’ukuri"
+      },
       {
         "text": "Nta gisubizo cy’ukuri",
         "correct": true
@@ -5001,21 +5136,39 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 297,
-    "questionText": "Kunyuranaho bibujijwe gusa igihe: a. Igihe mu muhanda hagati hashushanyijemo umurongo w’umweru ucagaguye.",
+    "questionText": "Kunyuranaho bibujijwe gusa igihe:",
     "choices": [
       {
-        "text": "Umuhanda ushushanyijwemo umurongo wera udacagaguye c. Ikinyabiziga gitwawe ku musozi unyerera d. Nta gisubizo cy’ukuri",
+        "text": "Igihe mu muhanda hagati hashushanyijemo umurongo w’umweru ucagaguye."
+      },
+      {
+        "text": "Umuhanda ushushanyijwemo umurongo wera udacagaguye",
         "correct": true
+      },
+      {
+        "text": "Ikinyabiziga gitwawe ku musozi unyerera"
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri"
       }
     ]
   },
   {
     "id": 298,
-    "questionText": "Mu gihe utwaye ikinyabiziga ni joro ucanye amatara maremare ugahura n’ikindi kinyabiziga giturutse mu kindi cyerecyezo: a. Gukomeza ibumoso b. Kuzimya ucana amatara maremare n’amagufi",
+    "questionText": "Mu gihe utwaye ikinyabiziga ni joro ucanye amatara maremare ugahura n’ikindi kinyabiziga giturutse mu kindi cyerecyezo:",
     "choices": [
       {
-        "text": "Kuzimya amatara maremare kugeza ikindi kinyabiziga gitambutse d. Nta gisubizo cy’ukuri kirimo",
+        "text": "Gukomeza ibumoso"
+      },
+      {
+        "text": "Kuzimya ucana amatara maremare n’amagufi"
+      },
+      {
+        "text": "Kuzimya amatara maremare kugeza ikindi kinyabiziga gitambutse",
         "correct": true
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri kirimo"
       }
     ]
   },
@@ -5024,35 +5177,71 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Igihe umuyobozi w’inyamaswa, afite inyamaswa idatuje, asaba ko ibinyabiziga bihagarara:",
     "choices": [
       {
-        "text": "Umuyobozi w’ikinyabiziga agomba guhagarara a. Umuyobozi w’ikinyabizigaagomba kuvuza ihoni agukomeza b. Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko c. Ibisubizo byose ni ukuri",
+        "text": "Umuyobozi w’ikinyabiziga agomba guhagarara",
         "correct": true
+      },
+      {
+        "text": "Umuyobozi w’ikinyabizigaagomba kuvuza ihoni agukomeza"
+      },
+      {
+        "text": "Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko"
+      },
+      {
+        "text": "Ibisubizo byose ni ukuri"
       }
     ]
   },
   {
     "id": 300,
-    "questionText": "Iyo mu muhanda hashushanyijemo umurongo wera ucagaguye, ntugomba a. Ntugomba kujya mu kindi gice cy’umuhanda",
+    "questionText": "Iyo mu muhanda hashushanyijemo umurongo wera ucagaguye, ntugomba",
     "choices": [
       {
-        "text": "Ushobora kujya mu kindi gice cy’umuhanda bibaye ngombwa b. Agomba guhagarika ikinyabiziga c. Nta gisubizo cy’ukuri",
+        "text": "Ntugomba kujya mu kindi gice cy’umuhanda"
+      },
+      {
+        "text": "Ushobora kujya mu kindi gice cy’umuhanda bibaye ngombwa",
         "correct": true
+      },
+      {
+        "text": "Agomba guhagarika ikinyabiziga"
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri"
       }
     ]
   },
   {
     "id": 301,
-    "questionText": "Kuvuza ihoni bibujijwe: a. Ku musigiti, ku rusengero, ku rutambiro",
+    "questionText": "Kuvuza ihoni bibujijwe:",
     "choices": [
       {
-        "text": "Hafi y’ibitaro c. Hafi y’ubuyobozi bwa polisi d. Nta gisubizo cy’ukuri",
+        "text": "Ku musigiti, ku rusengero, ku rutambiro"
+      },
+      {
+        "text": "Hafi y’ibitaro",
         "correct": true
+      },
+      {
+        "text": "Hafi y’ubuyobozi bwa polisi"
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri"
       }
     ]
   },
   {
     "id": 302,
-    "questionText": "Icyemezo cy’Isuzuma ry’ikinyabiziga kimara igihe kingana iki? a. Amezi 6 kubinyabiziga bikora ubucuruzi b. Amezi 12 ku binyabiziga bidakora ubucuruzi c. Imyaka 2",
+    "questionText": "Icyemezo cy’Isuzuma ry’ikinyabiziga kimara igihe kingana iki?",
     "choices": [
+      {
+        "text": "Amezi 6 kubinyabiziga bikora ubucuruzi"
+      },
+      {
+        "text": "Amezi 12 ku binyabiziga bidakora ubucuruzi"
+      },
+      {
+        "text": "Imyaka 2"
+      },
       {
         "text": "A na B ni ibisubizo by’ukuri",
         "correct": true
@@ -5069,7 +5258,10 @@ export const quizQuestions: QuizQuestion[] = [
         "correct": true
       },
       {
-        "text": "Ihute urenge aho abo bana bari c ) Komeza ugume ku muvuduko munini"
+        "text": "Ihute urenge aho abo bana bari"
+      },
+      {
+        "text": "Komeza ugume ku muvuduko munini"
       },
       {
         "text": "Komeza ugendere kuruhande rw’iburyo"
@@ -5078,12 +5270,21 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 304,
-    "questionText": "Umuyobozi w’ikinyabiziga yegereye aho umwana w’umuhungu utwaye akagare k’abana asezera ku nshuti ye. N’iyihe myifatire myiza wagira imbere yabo? a. Ikomereze nkaho ataragera munzira nyabagendwa",
+    "questionText": "Umuyobozi w’ikinyabiziga yegereye aho umwana w’umuhungu utwaye akagare k’abana asezera ku nshuti ye. N’iyihe myifatire myiza wagira imbere yabo?",
     "questionImage": "/image/img190.jpg",
     "choices": [
       {
-        "text": "Itegure kureka uwo mwana w’umuhungu atambuke, kuko yajya mu muhanda atitaye ku kinyabiziga cyawe c. Gabanya umuvuduko ubwire uwo mwana yambuke ukoresheje ibimenyetso d. Komeza nkaho uwo mwana akiri munzira y’abanyamaguru",
+        "text": "Ikomereze nkaho ataragera munzira nyabagendwa"
+      },
+      {
+        "text": "Itegure kureka uwo mwana w’umuhungu atambuke, kuko yajya mu muhanda atitaye ku kinyabiziga cyawe",
         "correct": true
+      },
+      {
+        "text": "Gabanya umuvuduko ubwire uwo mwana yambuke ukoresheje ibimenyetso"
+      },
+      {
+        "text": "Komeza nkaho uwo mwana akiri munzira y’abanyamaguru"
       }
     ]
   },
@@ -5093,8 +5294,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionImage": "/image/img191.jpg",
     "choices": [
       {
-        "text": "Umuyobozi w’ikinyabiziga agomba gukomeza b. Umuyobozi w’ikinyabiziga agomba kuguma mu ruhande rw’iburyo kugira ngo ahe inzira umumotari c. Umuyobozi w’ikinyabiziga agomba gutegereza d. Umuyobozi w’ikinyabiziga agomba gutanga inzira ayiha umu motari",
+        "text": "Umuyobozi w’ikinyabiziga agomba gukomeza",
         "correct": true
+      },
+      {
+        "text": "Umuyobozi w’ikinyabiziga agomba kuguma mu ruhande rw’iburyo kugira ngo ahe inzira umumotari"
+      },
+      {
+        "text": "Umuyobozi w’ikinyabiziga agomba gutegereza"
+      },
+      {
+        "text": "Umuyobozi w’ikinyabiziga agomba gutanga inzira ayiha umu motari"
       }
     ]
   },
@@ -5104,30 +5314,57 @@ export const quizQuestions: QuizQuestion[] = [
     "questionImage": "/image/img192.jpg",
     "choices": [
       {
-        "text": "Kugabanya umuvuduko mu gihe cyiza, ukitegura guhagarara b. Gukomeza agendera ku muvuduko uri hejuru, mu gihe umunyamaguru ategereje c. Kuguma ku muvuduko yari afite mu gihe umunyamaguru atarambuka d. Kuvuza ihoni akaguma ku muvuduko yahozeho",
+        "text": "Kugabanya umuvuduko mu gihe cyiza, ukitegura guhagarara",
         "correct": true
+      },
+      {
+        "text": "Gukomeza agendera ku muvuduko uri hejuru, mu gihe umunyamaguru ategereje"
+      },
+      {
+        "text": "Kuguma ku muvuduko yari afite mu gihe umunyamaguru atarambuka"
+      },
+      {
+        "text": "Kuvuza ihoni akaguma ku muvuduko yahozeho"
       }
     ]
   },
   {
     "id": 307,
-    "questionText": "Umuyobozi w’ikinyabiziga akurikiye ibinyabiziga bibiri, yifuza kubinyuraho. N’iki yashingiraho mbere yo kubanyuraho? a. Ugomba kuzinyuraho zombi",
+    "questionText": "Umuyobozi w’ikinyabiziga akurikiye ibinyabiziga bibiri, yifuza kubinyuraho. N’iki yashingiraho mbere yo kubanyuraho?",
     "questionImage": "/image/img195.jpg",
     "choices": [
       {
-        "text": "Sibyiza ko yazinyuraho atabasha kureba neza imbere ye c. Ibyapa by’aho ageze ntibimwemerera kunyuranaho d. Imbere har’inzira y’abanyamaguru",
+        "text": "Ugomba kuzinyuraho zombi"
+      },
+      {
+        "text": "Sibyiza ko yazinyuraho atabasha kureba neza imbere ye",
         "correct": true
+      },
+      {
+        "text": "Ibyapa by’aho ageze ntibimwemerera kunyuranaho"
+      },
+      {
+        "text": "Imbere har’inzira y’abanyamaguru"
       }
     ]
   },
   {
     "id": 308,
-    "questionText": "N’iki umuyobozi w’ikinyabiziga yakora ashaka gukatira iburyo? a. Vuza ihoni umenyesha umunyegare ko ushaka gukatira iburyo b. Kata ikoni mbere y’umunyegare",
+    "questionText": "N’iki umuyobozi w’ikinyabiziga yakora ashaka gukatira iburyo?",
     "questionImage": "/image/img196.jpg",
     "choices": [
       {
-        "text": "Emerera umunyegare akomeze inzira ye d. Ongera umuvuuko kugira ngo umutange gukata mbere ye",
+        "text": "Vuza ihoni umenyesha umunyegare ko ushaka gukatira iburyo"
+      },
+      {
+        "text": "Kata ikoni mbere y’umunyegare"
+      },
+      {
+        "text": "Emerera umunyegare akomeze inzira ye",
         "correct": true
+      },
+      {
+        "text": "Ongera umuvuuko kugira ngo umutange gukata mbere ye"
       }
     ]
   },
@@ -5157,8 +5394,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionImage": "/image/img200.jpg",
     "choices": [
       {
-        "text": "Ibinyabiziga byombi b. Ikinyabiziga cy’icyatsi c. Ikinyabiziga cy’umutuku d. Nta n’imwe",
+        "text": "Ibinyabiziga byombi",
         "correct": true
+      },
+      {
+        "text": "Ikinyabiziga cy’icyatsi"
+      },
+      {
+        "text": "Ikinyabiziga cy’umutuku"
+      },
+      {
+        "text": "Nta n’imwe"
       }
     ]
   },
@@ -5211,7 +5457,11 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "Ongera umuvuduko kugirango usoze ikoni"
       },
       {
-        "text": "Komeza kuko itara ry’icyatsi rigiye kwaka. (c )Hagarara niba utateza ibyago"
+        "text": "Komeza kuko itara ry’icyatsi rigiye kwaka."
+      },
+      {
+        "text": "Hagarara niba utateza ibyago",
+        "correct": true
       },
       {
         "text": "Komeza ubwitonzi witegura guhagarara mugihe itara rihindutse umutuku"
@@ -5220,9 +5470,18 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 314,
-    "questionText": "Niki umuyobozi w’ ikinyabiziga akwiriye kumenya mugihe akurikiye umuyobozi wikinyamitende ibiri kandi imodoka y’ umweru iri gusubira inyuma ijya mumuhanda? a. Umuyobozi wikinyabiziga gisubira inyuma azahagarara nabona umuyobozi w’ ikinyabimitende ibiri b. Umuyobozi w’ ikinyamitende ibiri ashobora gusaba umuyobozi w’ ikinyabiziga gisubira inyuma guhagarara c. Amatara yoguhagarara ashobora kuzima ikinyabiziga gikomeza gusubira inyuma",
+    "questionText": "Niki umuyobozi w’ ikinyabiziga akwiriye kumenya mugihe akurikiye umuyobozi wikinyamitende ibiri kandi imodoka y’ umweru iri gusubira inyuma ijya mumuhanda?",
     "questionImage": "/image/img206.jpg",
     "choices": [
+      {
+        "text": "Umuyobozi wikinyabiziga gisubira inyuma azahagarara nabona umuyobozi w’ ikinyabimitende ibiri"
+      },
+      {
+        "text": "Umuyobozi w’ ikinyamitende ibiri ashobora gusaba umuyobozi w’ ikinyabiziga gisubira inyuma guhagarara"
+      },
+      {
+        "text": "Amatara yoguhagarara ashobora kuzima ikinyabiziga gikomeza gusubira inyuma"
+      },
       {
         "text": "Umuyobozi w’ ikinyamitende ashobora guhagarara bitunguranye",
         "correct": true
@@ -5231,9 +5490,19 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 315,
-    "questionText": "Aha niki umuyobozi w’ ikinyabiziga yakora mugihe ashaka kujya iburyo? a. Gukomeza hagati y’ abanyamaguru babiri b. kuvuza ihoni akongera umuvuduko (c )Guhagarara akareka abanyamaguru bakambuka",
+    "questionText": "Aha niki umuyobozi w’ ikinyabiziga yakora mugihe ashaka kujya iburyo?",
     "questionImage": "/image/img207.jpg",
     "choices": [
+      {
+        "text": "Gukomeza hagati y’ abanyamaguru babiri"
+      },
+      {
+        "text": "kuvuza ihoni akongera umuvuduko"
+      },
+      {
+        "text": "Guhagarara akareka abanyamaguru bakambuka",
+        "correct": true
+      },
       {
         "text": "Reka umunyamaguru umwe atambuke ubone umwanya wogutambuka"
       }
@@ -5320,28 +5589,55 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 320,
-    "questionText": "Niki umuyobozi w’ikinyabiziga agomba gukora ahuye n’amatungo mu muhanda? a. Kuvuza ihoni kugirango zihunge",
+    "questionText": "Niki umuyobozi w’ikinyabiziga agomba gukora ahuye n’amatungo mu muhanda?",
     "choices": [
       {
-        "text": "Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko zigatambuka c. Kwatsa amatara maremare kugirango utambuke wihuta mu buryo bushoboka bwose d. Kuvuza ihoni ukanyuraho witonze",
+        "text": "Kuvuza ihoni kugirango zihunge"
+      },
+      {
+        "text": "Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko zigatambuka",
         "correct": true
+      },
+      {
+        "text": "Kwatsa amatara maremare kugirango utambuke wihuta mu buryo bushoboka bwose"
+      },
+      {
+        "text": "Kuvuza ihoni ukanyuraho witonze"
       }
     ]
   },
   {
     "id": 321,
-    "questionText": "Niki umuyobozi w’ikinyabiziga yakora abonye otobisi iri kuva aho zagenewe guhagararwamo? a. Gukomeza iruhande kuko ufite uburenganzira bwo gukomeza",
+    "questionText": "Niki umuyobozi w’ikinyabiziga yakora abonye otobisi iri kuva aho zagenewe guhagararwamo?",
     "choices": [
       {
-        "text": "Gabanya umuvuduko maze ureke ikomeze c. Gerageza unyureho kugirango atagutinza d. Menyesha umuyobozi wa otobisi aguhe inzira",
+        "text": "Gukomeza iruhande kuko ufite uburenganzira bwo gukomeza"
+      },
+      {
+        "text": "Gabanya umuvuduko maze ureke ikomeze",
         "correct": true
+      },
+      {
+        "text": "Gerageza unyureho kugirango atagutinza"
+      },
+      {
+        "text": "Menyesha umuyobozi wa otobisi aguhe inzira"
       }
     ]
   },
   {
     "id": 322,
-    "questionText": "Niki umuyobozi w’ikinyabiziga yakora mugihe ahuye n’ikinyabiziga cyakije itara ry’umuhondo rimyatsa? a. Mu gihe ikinyabiziga giturutse mu kindi cyerekezo kitagishoboye kugenda b. Mu gihe ikinyabiziga ndakumirwa giturutse mu kindi cyerekezo c. Mu gihe ikinyabiziga giturutse mu cyindi cyerekezo cy’ihuta",
+    "questionText": "Niki umuyobozi w’ikinyabiziga yakora mugihe ahuye n’ikinyabiziga cyakije itara ry’umuhondo rimyatsa?",
     "choices": [
+      {
+        "text": "Mu gihe ikinyabiziga giturutse mu kindi cyerekezo kitagishoboye kugenda"
+      },
+      {
+        "text": "Mu gihe ikinyabiziga ndakumirwa giturutse mu kindi cyerekezo"
+      },
+      {
+        "text": "Mu gihe ikinyabiziga giturutse mu cyindi cyerekezo cy’ihuta"
+      },
       {
         "text": "Kugabanya umuvuduko witegura guhagarara",
         "correct": true
@@ -5353,8 +5649,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Umuyobozi w’ikinyabiziga yakara iki mu gihe anyuzweho nikindi kinyabiziga?",
     "choices": [
       {
-        "text": "Gukomezanya umuvuduko warufite b. Kujya i buryo c. Kujya I bumoso d. Kwongera umuvuduko",
+        "text": "Gukomezanya umuvuduko warufite",
         "correct": true
+      },
+      {
+        "text": "Kujya i buryo"
+      },
+      {
+        "text": "Kujya I bumoso"
+      },
+      {
+        "text": "Kwongera umuvuduko"
       }
     ]
   },
@@ -5691,7 +5996,8 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "ibinyabiziga bimuturuka inyuma umuvuduko bifite n’uburyo bimwegereye"
       },
       {
-        "text": "(b) ibinyabiziga biturutse ibumoso bwe n’umuvuduko bifite n’intera iri hagati ye nabyo"
+        "text": "ibinyabiziga biturutse ibumoso bwe n’umuvuduko bifite n’intera iri hagati ye nabyo",
+        "correct": true
       },
       {
         "text": "ibinyabiziga biturutse iburyo n’umuvuduko bifite ni intera iri hagati ye nabyo"
@@ -5842,7 +6148,8 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "kuvuza ihoni ugakomeza"
       },
       {
-        "text": "(b) gukomeza ugabanyije umuvuduko n’ubwitonzi kuko bishoboka ko abanyeshuli bakwambuka bitunguranye"
+        "text": "gukomeza ugabanyije umuvuduko n’ubwitonzi kuko bishoboka ko abanyeshuli bakwambuka bitunguranye",
+        "correct": true
       },
       {
         "text": "nta bwitonzi budasnzwe bukenewe"
@@ -5936,7 +6243,8 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "kwireba"
       },
       {
-        "text": "(b) kugenzura ibigendera mu muhanda inyuma"
+        "text": "kugenzura ibigendera mu muhanda inyuma",
+        "correct": true
       },
       {
         "text": "kureba abicaye inyuma"
@@ -5957,7 +6265,8 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "ingaruka kubandi bakoresha umuhanda"
       },
       {
-        "text": "(c) Abandi bayobozi bi binyabiziga baza bashobora kutabona abambuka umuhanda"
+        "text": "Abandi bayobozi bi binyabiziga baza bashobora kutabona abambuka umuhanda",
+        "correct": true
       },
       {
         "text": "Ibisubizo byose ni ukuri"
@@ -6062,18 +6371,36 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 361,
-    "questionText": "Amatara ndangacyerekezo agomba kugaragara nijoro igihe ijuru rikeye mu ntera nibura ya: a. m 100 b. m 200",
+    "questionText": "Amatara ndangacyerekezo agomba kugaragara nijoro igihe ijuru rikeye mu ntera nibura ya:",
     "choices": [
       {
-        "text": "m150 d. m250",
+        "text": "m 100"
+      },
+      {
+        "text": "m 200"
+      },
+      {
+        "text": "m150",
         "correct": true
+      },
+      {
+        "text": "m250"
       }
     ]
   },
   {
     "id": 362,
-    "questionText": "Umurongo ucagaguye uvuga ko buri muyobozi abujijwe kuwurenga uretse mu gihe: a. Agomba kunyura ku kindi kinyabiziga b. Gukatira ibumoso c. Guhindukira cyangwa kujya mukindi gice cy’umuhanda",
+    "questionText": "Umurongo ucagaguye uvuga ko buri muyobozi abujijwe kuwurenga uretse mu gihe:",
     "choices": [
+      {
+        "text": "Agomba kunyura ku kindi kinyabiziga"
+      },
+      {
+        "text": "Gukatira ibumoso"
+      },
+      {
+        "text": "Guhindukira cyangwa kujya mukindi gice cy’umuhanda"
+      },
       {
         "text": "Ibi bisubizo byose nibyo",
         "correct": true
@@ -6082,39 +6409,75 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 363,
-    "questionText": "Igice cy’inzira nyabagendwa kigarukira kumirongo ibiri yera icagaguye ibangikanye kandi gifite ubugari budahagije kugirango imodoka zitambuke neza kiba ari: a. Inzira y’abanyamaguru",
+    "questionText": "Igice cy’inzira nyabagendwa kigarukira kumirongo ibiri yera icagaguye ibangikanye kandi gifite ubugari budahagije kugirango imodoka zitambuke neza kiba ari:",
     "choices": [
       {
-        "text": "Agahanda k’amagare c. a na b byose ni ukuri d. Nta gisubizo cy’ukuri kirimo",
+        "text": "Inzira y’abanyamaguru"
+      },
+      {
+        "text": "Agahanda k’amagare",
         "correct": true
+      },
+      {
+        "text": "a na b byose ni ukuri"
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri kirimo"
       }
     ]
   },
   {
     "id": 364,
-    "questionText": "Icyapa kimenyesha kugendera mu muhanda ubisikanirwamo gifite: a. Ishusho y’uruziga mw’ibara ritukura, ubuso bwera n’ikirango cy’umukara",
+    "questionText": "Icyapa kimenyesha kugendera mu muhanda ubisikanirwamo gifite:",
     "choices": [
       {
-        "text": "Ishusho ya mpandeshatu mw’ibara ritukura, ubuso bwera n’ikirango cy’umukara c. Ishusho ya mpandeshatu mw’ibara ritukura, ubuso bw’ubururu n’ikirango cy’umukara d. Ishusho y’uruziga mw’ibara ritukura, ubuso bw’ubururu n’ikirango cy’umukara",
+        "text": "Ishusho y’uruziga mw’ibara ritukura, ubuso bwera n’ikirango cy’umukara"
+      },
+      {
+        "text": "Ishusho ya mpandeshatu mw’ibara ritukura, ubuso bwera n’ikirango cy’umukara",
         "correct": true
+      },
+      {
+        "text": "Ishusho ya mpandeshatu mw’ibara ritukura, ubuso bw’ubururu n’ikirango cy’umukara"
+      },
+      {
+        "text": "Ishusho y’uruziga mw’ibara ritukura, ubuso bw’ubururu n’ikirango cy’umukara"
       }
     ]
   },
   {
     "id": 365,
-    "questionText": "Ikinyabiziga kigendeshwa na moteri n’ikinyabiziga gikururwa n’inyamaswa ntibishobora gukurura : a. Ibinyabiziga birenze kimwe b. Ibinyabiziga bipakiye birenze bibiri",
+    "questionText": "Ikinyabiziga kigendeshwa na moteri n’ikinyabiziga gikururwa n’inyamaswa ntibishobora gukurura :",
     "choices": [
       {
-        "text": "Ibinyabiziga birenze bibiri d. b na c ni byo",
+        "text": "Ibinyabiziga birenze kimwe"
+      },
+      {
+        "text": "Ibinyabiziga bipakiye birenze bibiri"
+      },
+      {
+        "text": "Ibinyabiziga birenze bibiri",
         "correct": true
+      },
+      {
+        "text": "b na c ni byo"
       }
     ]
   },
   {
     "id": 366,
-    "questionText": "Iki cyapa kivuga: a. Aho imihanda ihurira b. inkomane y’aho umuhanda umwe urasukira iburyo c. a na b ni ibisubizo by’ukuri",
+    "questionText": "Iki cyapa kivuga:",
     "questionImage": "/image/img105.jpg",
     "choices": [
+      {
+        "text": "Aho imihanda ihurira"
+      },
+      {
+        "text": "inkomane y’aho umuhanda umwe urasukira iburyo"
+      },
+      {
+        "text": "a na b ni ibisubizo by’ukuri"
+      },
       {
         "text": "nta gisubizo cy’ukuri kirimo",
         "correct": true
@@ -6123,55 +6486,100 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 367,
-    "questionText": "Iki cyapa gisobanura ibi bikurikira: a.birabujijwe kunyura ku kindi kinyabiziga",
+    "questionText": "Iki cyapa gisobanura ibi bikurikira:",
     "questionImage": "/image/img238.jpg",
     "choices": [
       {
-        "text": "gutambuka mbere kw’ibinyabiziga bituruka aho ujya c. A na b ni ibisubizo by’ukuri d. nta gisubizo cyukuri kirimo",
+        "text": "birabujijwe kunyura ku kindi kinyabiziga"
+      },
+      {
+        "text": "gutambuka mbere kw’ibinyabiziga bituruka aho ujya",
         "correct": true
+      },
+      {
+        "text": "A na b ni ibisubizo by’ukuri"
+      },
+      {
+        "text": "nta gisubizo cyukuri kirimo"
       }
     ]
   },
   {
     "id": 368,
-    "questionText": "Utugarurarumuri turi ku ruhande rw’imbere rw’ikinyabiziga tugomba gusa: a. N’umuhondo b. N’umutuku",
+    "questionText": "Utugarurarumuri turi ku ruhande rw’imbere rw’ikinyabiziga tugomba gusa:",
     "choices": [
       {
-        "text": "n’umweru d. Nta gisubizo cy’ukuri kirimo",
+        "text": "N’umuhondo"
+      },
+      {
+        "text": "N’umutuku"
+      },
+      {
+        "text": "n’umweru",
         "correct": true
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri kirimo"
       }
     ]
   },
   {
     "id": 370,
-    "questionText": "Iki cyapa kivuga: a. Iherezo ryo gutambuka mbere b. Gutambuka mbere kw’ibinyabiziga biturutse imbere aho ujya",
+    "questionText": "Iki cyapa kivuga:",
     "questionImage": "/image/img240.jpg",
     "choices": [
       {
-        "text": "gutambuka mbere y’ibinyabiziga biturutse imbere d. Nta gisubizo cy’ukuri kirimo",
+        "text": "Iherezo ryo gutambuka mbere"
+      },
+      {
+        "text": "Gutambuka mbere kw’ibinyabiziga biturutse imbere aho ujya"
+      },
+      {
+        "text": "gutambuka mbere y’ibinyabiziga biturutse imbere",
         "correct": true
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri kirimo"
       }
     ]
   },
   {
     "id": 370,
-    "questionText": "Iki cyapa kigizwe: a. ishusho mpandeshatu ,ubuso ubururu b. Ishusho mpandeshatu,ubuso umukara",
+    "questionText": "Iki cyapa kigizwe:",
     "questionImage": "/image/img242.jpg",
     "choices": [
       {
-        "text": "ishusho mpandeshatu,ubuso umweru d. Nta gisubizo cy’ukuri",
+        "text": "ishusho mpandeshatu ,ubuso ubururu"
+      },
+      {
+        "text": "Ishusho mpandeshatu,ubuso umukara"
+      },
+      {
+        "text": "ishusho mpandeshatu,ubuso umweru",
         "correct": true
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri"
       }
     ]
   },
   {
     "id": 371,
-    "questionText": "Iki cyapa kivuga: a. ifungana ry’umuhanda iburyo",
+    "questionText": "Iki cyapa kivuga:",
     "questionImage": "/image/img246.jpg",
     "choices": [
       {
-        "text": "ifungana ry’umuhanda w’akayira gasatira umuhanda ibumoso c. Akayira gato d. Nta gisubizo cy’ukuri",
+        "text": "ifungana ry’umuhanda iburyo"
+      },
+      {
+        "text": "ifungana ry’umuhanda w’akayira gasatira umuhanda ibumoso",
         "correct": true
+      },
+      {
+        "text": "Akayira gato"
+      },
+      {
+        "text": "Nta gisubizo cy’ukuri"
       }
     ]
   },
@@ -6180,16 +6588,34 @@ export const quizQuestions: QuizQuestion[] = [
     "questionText": "Umuyobozi ubonye ko hari undi umukurikiye ashaka kumunyuraho agomba kubahiriza ibi bikurikira :",
     "choices": [
       {
-        "text": "kwegera i ruhande rw’iburyo bw’umuhanda b. Kongera umuvuduko c. Guhagarara d. a na c ni byo bisubizo by’ukuri",
+        "text": "kwegera i ruhande rw’iburyo bw’umuhanda",
         "correct": true
+      },
+      {
+        "text": "Kongera umuvuduko"
+      },
+      {
+        "text": "Guhagarara"
+      },
+      {
+        "text": "a na c ni byo bisubizo by’ukuri"
       }
     ]
   },
   {
     "id": 373,
-    "questionText": "Iki cyapa cyerekana : a. ifungana ry’umuhanda b. ifungana ry’umuhanda n’akayira gasatira umuhanda i bumoso c. umuhanda utaringaniye",
+    "questionText": "Iki cyapa cyerekana :",
     "questionImage": "/image/img248.jpg",
     "choices": [
+      {
+        "text": "ifungana ry’umuhanda"
+      },
+      {
+        "text": "ifungana ry’umuhanda n’akayira gasatira umuhanda i bumoso"
+      },
+      {
+        "text": "umuhanda utaringaniye"
+      },
       {
         "text": "nta gisubizo cy’ukuri kirimo",
         "correct": true
@@ -6202,16 +6628,34 @@ export const quizQuestions: QuizQuestion[] = [
     "questionImage": "/image/img250.jpg",
     "choices": [
       {
-        "text": "ntihanyurwa mu byerekezo byombi b. ntihanyurwa n’abandi uretse abahatuye c. hanyurwa mu cyerekezo kimwe gusa d. nta gisubizo cy’ukuri kirimo",
+        "text": "ntihanyurwa mu byerekezo byombi",
         "correct": true
+      },
+      {
+        "text": "ntihanyurwa n’abandi uretse abahatuye"
+      },
+      {
+        "text": "hanyurwa mu cyerekezo kimwe gusa"
+      },
+      {
+        "text": "nta gisubizo cy’ukuri kirimo"
       }
     ]
   },
   {
     "id": 375,
-    "questionText": "Icyi cyapa cyerekana : a. Ifungana ry’umuhanda b. umuhanda unyerera c. umuhanda utaringaniye",
+    "questionText": "Icyi cyapa cyerekana :",
     "questionImage": "/image/img254.jpg",
     "choices": [
+      {
+        "text": "Ifungana ry’umuhanda"
+      },
+      {
+        "text": "umuhanda unyerera"
+      },
+      {
+        "text": "umuhanda utaringaniye"
+      },
       {
         "text": "nta gisubizo cy’ukuri kirimo",
         "correct": true
@@ -6224,8 +6668,17 @@ export const quizQuestions: QuizQuestion[] = [
     "questionImage": "/image/img256.jpg",
     "choices": [
       {
-        "text": "ikoni iburyo b. akazamuko gashinze cyane c. akamanuko gashobora gutera ibyago d. b na c byose ni ukuri",
+        "text": "ikoni iburyo",
         "correct": true
+      },
+      {
+        "text": "akazamuko gashinze cyane"
+      },
+      {
+        "text": "akamanuko gashobora gutera ibyago"
+      },
+      {
+        "text": "b na c byose ni ukuri"
       }
     ]
   },
@@ -6288,8 +6741,14 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 380,
-    "questionText": "Icyapa cyerekana ko bibujijwe kuvuza amahoni kirangwa na : a Ishusho y’uruziga, ubuso bw’ubururu, ikiranga cy’umukara b Ishusho y’uruziga, ubuso bw’ubururu, ikiranga cy’umweru",
+    "questionText": "Icyapa cyerekana ko bibujijwe kuvuza amahoni kirangwa na :",
     "choices": [
+      {
+        "text": "Ishusho y’uruziga, ubuso bw’ubururu, ikiranga cy’umukara"
+      },
+      {
+        "text": "Ishusho y’uruziga, ubuso bw’ubururu, ikiranga cy’umweru"
+      },
       {
         "text": "Ishusho y’uruziga, ubuso bw’umweru, ikiranga cy’umukara",
         "correct": true
@@ -6377,8 +6836,11 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 385,
-    "questionText": "Ishusho y’icyapa kivuga’’ugukikira”bitegetswe ni : a mpandeshatu",
+    "questionText": "Ishusho y’icyapa kivuga’’ugukikira”bitegetswe ni :",
     "choices": [
+      {
+        "text": "mpandeshatu"
+      },
       {
         "text": "uruziga",
         "correct": true
@@ -6393,11 +6855,20 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 386,
-    "questionText": "Icyapa kivuga “icyerekezo gitegetswe”kigizwe n’ikirango cy’ibara : a umweru b umutuku",
+    "questionText": "Icyapa kivuga “icyerekezo gitegetswe”kigizwe n’ikirango cy’ibara :",
     "choices": [
       {
-        "text": "ubururu n’ikirango cy’umweru d umukara",
+        "text": "umweru"
+      },
+      {
+        "text": "umutuku"
+      },
+      {
+        "text": "ubururu n’ikirango cy’umweru",
         "correct": true
+      },
+      {
+        "text": "umukara"
       }
     ]
   },
