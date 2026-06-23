@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { quizQuestions } from "@/data/questions";
 import { ModeButton } from "@/components/ModeButton";
 import { ProgressBar } from "@/components/ProgressBar";
+import { ConfirmModal } from "@/components/ConfirmModal";
 import { getCompletedCount, loadPassedIds, resetProgress } from "@/lib/quiz";
 
 export default function LandingPage() {
   const [completed, setCompleted] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const total = quizQuestions.length;
   const remaining = Math.max(0, total - completed);
 
@@ -20,12 +22,13 @@ export default function LandingPage() {
   }, []);
 
   function handleResetProgress() {
-    if (!window.confirm("Reset Full Mode progress?")) {
-      return;
-    }
+    setIsModalOpen(true);
+  }
 
+  function handleConfirmReset() {
     resetProgress();
     refreshProgress();
+    setIsModalOpen(false);
   }
 
   return (
@@ -67,6 +70,14 @@ export default function LandingPage() {
           </div>
         </section>
       </div>
+
+      <ConfirmModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={handleConfirmReset}
+        title="Reset Progress?"
+        message="Are you sure you want to reset your progress? This action cannot be undone."
+      />
     </main>
   );
 }

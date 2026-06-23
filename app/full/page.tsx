@@ -6,6 +6,7 @@ import { quizQuestions } from "@/data/questions";
 import { ModeButton } from "@/components/ModeButton";
 import { ProgressBar } from "@/components/ProgressBar";
 import { QuestionCard } from "@/components/QuestionCard";
+import { ConfirmModal } from "@/components/ConfirmModal";
 import {
   getCompletedCount,
   getRemainingQuestions,
@@ -32,6 +33,7 @@ export default function FullModePage() {
   const [queue, setQueue] = useState<SessionQuestion[]>([]);
   const [selectedChoice, setSelectedChoice] = useState<QuizChoice | null>(null);
   const [feedback, setFeedback] = useState<Feedback>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const total = quizQuestions.length;
   const completed = useMemo(() => getCompletedCount(passedIds), [passedIds]);
@@ -86,15 +88,16 @@ export default function FullModePage() {
   }
 
   function handleResetProgress() {
-    if (!window.confirm("Reset Full Mode progress?")) {
-      return;
-    }
+    setIsModalOpen(true);
+  }
 
+  function handleConfirmReset() {
     resetProgress();
     setPassedIds([]);
     setQueue(createSessionQuestions(quizQuestions));
     setSelectedChoice(null);
     setFeedback(null);
+    setIsModalOpen(false);
   }
 
   if (!currentQuestion && completed >= total) {
@@ -116,6 +119,13 @@ export default function FullModePage() {
             </div>
           </section>
         </div>
+        <ConfirmModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onConfirm={handleConfirmReset}
+          title="Reset Progress?"
+          message="Are you sure you want to reset your progress? This action cannot be undone."
+        />
       </main>
     );
   }
@@ -164,6 +174,14 @@ export default function FullModePage() {
           />
         ) : null}
       </div>
+
+      <ConfirmModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={handleConfirmReset}
+        title="Reset Progress?"
+        message="Are you sure you want to reset your progress? This action cannot be undone."
+      />
     </main>
   );
 }
