@@ -24,7 +24,7 @@ type SessionQuestion = QuizQuestion & {
 function createSessionQuestions(questions: QuizQuestion[]): SessionQuestion[] {
   return shuffleArray(questions).map((question) => ({
     ...question,
-    shuffledChoices: shuffleArray(question.choices),
+    shuffledChoices: question.choices,
   }));
 }
 
