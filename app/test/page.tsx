@@ -15,7 +15,7 @@ type TestQuestion = QuizQuestion & {
 function createTestQuestions(): TestQuestion[] {
   return getRandomQuestions(20).map((question) => ({
     ...question,
-    shuffledChoices: shuffleArray(question.choices),
+    shuffledChoices: question.choices,
   }));
 }
 
