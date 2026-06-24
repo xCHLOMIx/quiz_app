@@ -3196,11 +3196,11 @@ export const quizQuestions: QuizQuestion[] = [
         "text": "ikimenyetso cy’itara risa n’icunga rihishije"
       },
       {
-        "text": "icyapa cyera cya mpande enye zingana gifite cm 30 kuri buri ruhande",
-        "correct": true
+        "text": "icyapa cyera cya mpande enye zingana gifite cm 30 kuri buri ruhande"
       },
       {
-        "text": "nta gisubizo cy’ukuri kirimo"
+        "text": "nta gisubizo cy’ukuri kirimo",
+        "correct": true
       }
     ]
   },
