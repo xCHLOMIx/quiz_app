@@ -1585,44 +1585,39 @@ b) Imbere ipine ryapfumutse.
 
 d. Imbere hari hatangirwa serivisi.
 260. Iki cyapa gisobanura iki?
-135
+img135
 
 a) Imbere hari umuyobozi w’amatungo.
 b) Imbere hari inzira ya gari ya moshi.
-
 (c) Ahegereye amasangano y’inzira
 nyabagendwa n’inzira ya gari ya moshi
 hatabambiye
-
 d. Inkomane ibambiye.
+
 261. Muri iri sangano ry’umuhanda hari icyapa gisobanura “guhagarara” n’umurongo wera urombereje munzira .
-
 Niyihe mpamvu hari iki cyapa cyo “guhagarara” hano?
-
 img139
 (a) Biragoye kubona neza mu muhanda munini
 b) Umuvuduko mu muhanda munini wavanyweho
 c) Ni mwisangano ry’umuhanda rikoreshwa cyane
 d) Hari imirongo iburira ibyago bitunguranye
+
 262. Ni iki gikenewe muri ibi bikurikira kugirango ubashe gutwara imodoka mu muhanda biteganywa nitegeko
 a) Uruhushya rwa burundu rwo gutwara ibinyabiziga rugifite agaciro
 b) Ubwishingizi bw’ikinyabizaga bugifite agaciro
 c) Icyemezo cy’iyandikwa ry’ikinyabiziga
-
 (d) Ibisubizo byose nibyo
 
 263. Ikinyabiziga gishya gikenerwa gusuzumwa bwambere nyuma y’igihe kingana iki?
 
 a) Nyuma y’umwaka umwe
-
 (b) Nyuma y’imyaka ibiri
 c)A na b ni ibisubizo by’ukuri
 d)Nta gisubizo cy’ukuri
-264. Ni ryari ushobora kwakiriza icyarimwe amatara yose ndangacyerekezo y’ikinyabiziga?
 
+264. Ni ryari ushobora kwakiriza icyarimwe amatara yose ndangacyerekezo y’ikinyabiziga?
 a) Mu gihe ushaka kuburira abandi bakoresha umuhanda
 b) Mu gihe ikinyabiziga cyawe gishobora guteza ibyago
-
 (c) A na b ni ibisubizo by’ukuri
 
 d) Ntagisubizo cy’ukuri
