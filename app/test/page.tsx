@@ -26,6 +26,8 @@ export default function TestModePage() {
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showResults, setShowResults] = useState(false);
+  const [reviewMode, setReviewMode] = useState(false);
+  const [reviewIndex, setReviewIndex] = useState(0);
 
   function startTest() {
     const nextQuestions = createTestQuestions();
@@ -34,6 +36,8 @@ export default function TestModePage() {
     setAnswers(Array.from({ length: nextQuestions.length }, () => null));
     setCurrentIndex(0);
     setShowResults(false);
+    setReviewMode(false);
+    setReviewIndex(0);
   }
 
   const answeredCount = answers.filter(Boolean).length;
@@ -52,11 +56,76 @@ export default function TestModePage() {
     });
   }
 
+  const failedQuestions = useMemo(() => {
+    if (!showResults) return [];
+    return questions
+      .map((q, i) => ({ question: q, answer: answers[i], originalIndex: i }))
+      .filter((item) => item.answer === null || !item.answer.correct);
+  }, [questions, answers, showResults]);
+
   if (showResults) {
+    if (reviewMode && failedQuestions.length > 0) {
+      const currentFailed = failedQuestions[reviewIndex];
+      return (
+        <main className="min-h-screen bg-[#ff9bb9]/20 backdrop-blur-[2px] px-4 py-6 text-black sm:px-6 flex justify-center">
+          <div className="w-full max-w-2xl space-y-4">
+            <header className="flex flex-col gap-3 border-2 border-black bg-white p-3.5 shadow-[3px_3px_0_#111111] rounded-xl sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-xs font-black uppercase text-zinc-500">Review Mode</p>
+                <h1 className="text-xl sm:text-2xl font-black uppercase leading-tight">
+                  Failed Question {reviewIndex + 1} / {failedQuestions.length}
+                </h1>
+              </div>
+            </header>
+
+            <QuestionCard
+              choices={currentFailed.question.shuffledChoices}
+              onSelect={() => {}}
+              question={currentFailed.question}
+              selectedChoice={currentFailed.answer}
+              revealAnswer={true}
+              disabled={true}
+            />
+
+            <nav className="grid gap-3 sm:grid-cols-2">
+              <ModeButton
+                onClick={() => setReviewIndex((index) => Math.max(0, index - 1))}
+                variant="white"
+                disabled={reviewIndex === 0}
+              >
+                Previous
+              </ModeButton>
+              <ModeButton
+                onClick={() => setReviewIndex((index) => Math.min(failedQuestions.length - 1, index + 1))}
+                variant="blue"
+                disabled={reviewIndex >= failedQuestions.length - 1}
+              >
+                Next
+              </ModeButton>
+            </nav>
+
+            <nav className="mt-6 grid gap-3 sm:grid-cols-2">
+              <ModeButton onClick={startTest} variant="yellow">
+                Retry Test
+              </ModeButton>
+              <ModeButton href="/" variant="blue">
+                Back to Home
+              </ModeButton>
+            </nav>
+          </div>
+        </main>
+      );
+    }
+
     return (
       <main className="min-h-screen bg-[#faf4b7]/20 backdrop-blur-[2px] px-4 py-8 text-black sm:px-6 flex items-center justify-center">
         <div className="w-full max-w-2xl">
-          <ResultsScreen onRetry={startTest} score={score} total={questions.length} />
+          <ResultsScreen 
+            onRetry={startTest} 
+            score={score} 
+            total={questions.length} 
+            onReview={failedQuestions.length > 0 ? () => setReviewMode(true) : undefined}
+          />
         </div>
       </main>
     );

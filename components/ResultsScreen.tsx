@@ -4,9 +4,10 @@ type ResultsScreenProps = {
   score: number;
   total: number;
   onRetry: () => void;
+  onReview?: () => void;
 };
 
-export function ResultsScreen({ score, total, onRetry }: ResultsScreenProps) {
+export function ResultsScreen({ score, total, onRetry, onReview }: ResultsScreenProps) {
   const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
   const passed = percentage >= 60;
 
@@ -21,6 +22,15 @@ export function ResultsScreen({ score, total, onRetry }: ResultsScreenProps) {
         </p>
         <p>Percentage: {percentage}%</p>
       </div>
+      
+      {onReview && (
+        <div className="mt-6">
+          <ModeButton onClick={onReview} variant="pink">
+            Review Failed Questions
+          </ModeButton>
+        </div>
+      )}
+
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         <ModeButton onClick={onRetry} variant="yellow">
           Retry Test
