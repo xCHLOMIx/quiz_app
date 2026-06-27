@@ -9,6 +9,8 @@ import { useUser } from "@/lib/user";
 import { loadPassedIds, getCompletedCount } from "@/lib/quiz";
 import { quizQuestions } from "@/data/questions";
 import { ModeButton } from "@/components/ModeButton";
+import { SyncConflictModal } from "@/components/SyncConflictModal";
+import { Toast } from "@/components/Toast";
 
 export default function AccountPage() {
   const router = useRouter();
@@ -27,6 +29,48 @@ export default function AccountPage() {
   // Compute stats for logged in user
   const [completedCount, setCompletedCount] = useState(0);
   const totalQuestions = quizQuestions.length;
+
+  // Conflict modal states
+  const [conflictData, setConflictData] = useState<{
+    email: string;
+    dbPassedIds: number[];
+    localPassedIds: number[];
+    mergedPassedIds: number[];
+  } | null>(null);
+  const [isConflictModalOpen, setIsConflictModalOpen] = useState(false);
+
+  const handleChooseLocal = () => {
+    if (conflictData) {
+      login(conflictData.email, conflictData.localPassedIds);
+      setCodeDigits(Array(6).fill(""));
+      setConflictData(null);
+      setIsConflictModalOpen(false);
+    }
+  };
+
+  const handleChooseDb = () => {
+    if (conflictData) {
+      login(conflictData.email, conflictData.dbPassedIds);
+      setCodeDigits(Array(6).fill(""));
+      setConflictData(null);
+      setIsConflictModalOpen(false);
+    }
+  };
+
+  const handleChooseMerge = () => {
+    if (conflictData) {
+      login(conflictData.email, conflictData.mergedPassedIds);
+      setCodeDigits(Array(6).fill(""));
+      setConflictData(null);
+      setIsConflictModalOpen(false);
+    }
+  };
+
+  const handleCancelConflict = () => {
+    setConflictData(null);
+    setIsConflictModalOpen(false);
+    setIsSubmitting(false);
+  };
 
   useEffect(() => {
     if (email) {
@@ -128,9 +172,34 @@ export default function AccountPage() {
           setIsSubmitting(false);
         }, 1200);
       } else {
-        login(data.email, data.passedIds);
-        setCodeDigits(Array(6).fill(""));
-        setIsSubmitting(false);
+        const dbPassedIds = data.passedIds || [];
+        const localPassedIds = loadPassedIds();
+
+        const hasDbProgress = dbPassedIds.length > 0;
+        const hasLocalProgress = localPassedIds.length > 0;
+
+        const isSame = dbPassedIds.length === localPassedIds.length &&
+                       dbPassedIds.every((id: number) => localPassedIds.includes(id));
+
+        if (hasDbProgress && hasLocalProgress && !isSame) {
+          const mergedPassedIds = Array.from(new Set([...localPassedIds, ...dbPassedIds]));
+          setConflictData({
+            email: data.email,
+            dbPassedIds,
+            localPassedIds,
+            mergedPassedIds,
+          });
+          setIsConflictModalOpen(true);
+          setIsSubmitting(false);
+        } else {
+          let resolvedPassedIds = dbPassedIds;
+          if (hasLocalProgress && !hasDbProgress) {
+            resolvedPassedIds = localPassedIds;
+          }
+          login(data.email, resolvedPassedIds);
+          setCodeDigits(Array(6).fill(""));
+          setIsSubmitting(false);
+        }
       }
     } catch (err: any) {
       setError(err.message || "Failed to authenticate");
@@ -209,17 +278,7 @@ export default function AccountPage() {
               {isSignUp ? "Create Account" : "Sign In"}
             </h1>
 
-            {error && (
-              <div className="mb-4 border-2 border-black bg-[#ff9bb9] p-3 text-sm font-black uppercase text-black rounded-xl shadow-[2px_2px_0_#111111]">
-                {error}
-              </div>
-            )}
 
-            {success && (
-              <div className="mb-4 border-2 border-black bg-[#72e283] p-3 text-sm font-black uppercase text-black rounded-xl shadow-[2px_2px_0_#111111]">
-                {success}
-              </div>
-            )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex flex-col gap-1.5">
@@ -307,6 +366,35 @@ export default function AccountPage() {
           </section>
         )}
       </div>
+
+      {conflictData && (
+        <SyncConflictModal
+          isOpen={isConflictModalOpen}
+          localCount={conflictData.localPassedIds.length}
+          dbCount={conflictData.dbPassedIds.length}
+          mergedCount={conflictData.mergedPassedIds.length}
+          onChooseLocal={handleChooseLocal}
+          onChooseDb={handleChooseDb}
+          onChooseMerge={handleChooseMerge}
+          onCancel={handleCancelConflict}
+        />
+      )}
+
+      {error && (
+        <Toast
+          message={error}
+          type="error"
+          onClose={() => setError(null)}
+        />
+      )}
+
+      {success && (
+        <Toast
+          message={success}
+          type="success"
+          onClose={() => setSuccess(null)}
+        />
+      )}
     </main>
   );
 }

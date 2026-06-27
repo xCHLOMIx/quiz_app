@@ -120,7 +120,7 @@ export default function FullModePage() {
 
   if (!currentQuestion && completed >= total) {
     return (
-      <main className="min-h-screen bg-[#72e283]/20 dark:bg-[#72e283]/5 backdrop-blur-[2px] px-4 py-8 text-black dark:text-zinc-100 sm:px-6 flex items-center justify-center">
+      <main className="min-h-screen bg-[#72e283]/20 dark:bg-[#72e283]/5 px-4 py-8 text-black dark:text-zinc-100 sm:px-6 flex items-center justify-center">
         <div className="w-full max-w-2xl">
           <section className="w-full border-2 border-black bg-white dark:bg-zinc-900 p-6 shadow-[4px_4px_0_#111111] dark:shadow-[4px_4px_0_#000000] sm:p-8 rounded-2xl transition-colors duration-200">
             <h1 className="text-2xl font-black uppercase sm:text-3xl">You completed all questions!</h1>
@@ -149,7 +149,7 @@ export default function FullModePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#8cd8ff]/20 dark:bg-[#8cd8ff]/5 backdrop-blur-[2px] px-4 py-6 text-black dark:text-zinc-100 sm:px-6 flex justify-center">
+    <main className="min-h-screen bg-[#8cd8ff]/20 dark:bg-[#8cd8ff]/5 px-4 py-6 text-black dark:text-zinc-100 sm:px-6 flex justify-center">
       <div className="w-full max-w-2xl space-y-4">
         <header className="flex flex-col gap-3 border-2 border-black bg-white dark:bg-zinc-900 p-3.5 shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] rounded-xl sm:flex-row sm:items-center sm:justify-between transition-colors duration-200">
           <div>

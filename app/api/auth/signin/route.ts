@@ -36,22 +36,11 @@ export async function POST(request: Request) {
       );
     }
 
-    // Merge passedIds
+    // Retrieve passedIds from DB to return to client (do NOT merge automatically here)
     const dbPassedIds = Array.isArray(user.passedIds) ? user.passedIds : [];
-    const localPassedIds = Array.isArray(passedIds)
-      ? passedIds.filter((id): id is number => Number.isFinite(id))
-      : [];
-
-    const mergedPassedIds = Array.from(new Set([...dbPassedIds, ...localPassedIds]));
-
-    // Update in database
-    await db.collection("users").updateOne(
-      { email: emailStr },
-      { $set: { passedIds: mergedPassedIds } }
-    );
 
     return NextResponse.json(
-      { success: true, email: emailStr, passedIds: mergedPassedIds },
+      { success: true, email: emailStr, passedIds: dbPassedIds },
       { status: 200 }
     );
   } catch (error: any) {

@@ -24,21 +24,16 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(false);
   }, []);
 
-  const login = (userEmail: string, dbPassedIds: number[]) => {
+  const login = (userEmail: string, passedIds: number[]) => {
     setEmail(userEmail);
     localStorage.setItem("user-email", userEmail);
+    savePassedIds(passedIds);
 
-    // Load local progress
-    const localPassedIds = loadPassedIds();
-    // Merge local and db progress
-    const mergedPassedIds = Array.from(new Set([...localPassedIds, ...dbPassedIds]));
-    savePassedIds(mergedPassedIds);
-
-    // Send final merged progress back to server to make sure DB has it
+    // Send final progress back to server to make sure DB has it
     fetch("/api/auth/sync", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: userEmail, passedIds: mergedPassedIds }),
+      body: JSON.stringify({ email: userEmail, passedIds }),
     }).catch((err) => console.error("Sync failed on login:", err));
   };
 
