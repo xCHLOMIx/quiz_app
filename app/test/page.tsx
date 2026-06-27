@@ -67,9 +67,9 @@ export default function TestModePage() {
     if (reviewMode && failedQuestions.length > 0) {
       const currentFailed = failedQuestions[reviewIndex];
       return (
-        <main className="min-h-screen bg-[#ff9bb9]/20 backdrop-blur-[2px] px-4 py-6 text-black sm:px-6 flex justify-center">
+        <main className="min-h-screen bg-[#ff9bb9]/20 dark:bg-[#ff9bb9]/5 backdrop-blur-[2px] px-4 py-6 text-black dark:text-zinc-100 sm:px-6 flex justify-center">
           <div className="w-full max-w-2xl space-y-4">
-            <header className="flex flex-col gap-3 border-2 border-black bg-white p-3.5 shadow-[3px_3px_0_#111111] rounded-xl sm:flex-row sm:items-center sm:justify-between">
+            <header className="flex flex-col gap-3 border-2 border-black bg-white dark:bg-zinc-900 p-3.5 shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] rounded-xl sm:flex-row sm:items-center sm:justify-between transition-colors duration-200">
               <div>
                 <p className="text-xs font-black uppercase text-zinc-500">Review Mode</p>
                 <h1 className="text-xl sm:text-2xl font-black uppercase leading-tight">
@@ -118,7 +118,7 @@ export default function TestModePage() {
     }
 
     return (
-      <main className="min-h-screen bg-[#faf4b7]/20 backdrop-blur-[2px] px-4 py-8 text-black sm:px-6 flex items-center justify-center">
+      <main className="min-h-screen bg-[#faf4b7]/20 dark:bg-[#faf4b7]/5 backdrop-blur-[2px] px-4 py-8 text-black dark:text-zinc-100 sm:px-6 flex items-center justify-center">
         <div className="w-full max-w-2xl">
           <ResultsScreen 
             onRetry={startTest} 
@@ -132,9 +132,9 @@ export default function TestModePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#ff9bb9]/20 backdrop-blur-[2px] px-4 py-6 text-black sm:px-6 flex justify-center">
+    <main className="min-h-screen bg-[#ff9bb9]/20 dark:bg-[#ff9bb9]/5 backdrop-blur-[2px] px-4 py-6 text-black dark:text-zinc-100 sm:px-6 flex justify-center">
       <div className="w-full max-w-2xl space-y-4">
-        <header className="flex flex-col gap-3 border-2 border-black bg-white p-3.5 shadow-[3px_3px_0_#111111] rounded-xl sm:flex-row sm:items-center sm:justify-between">
+        <header className="flex flex-col gap-3 border-2 border-black bg-white dark:bg-zinc-900 p-3.5 shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] rounded-xl sm:flex-row sm:items-center sm:justify-between transition-colors duration-200">
           <div>
             <p className="text-xs font-black uppercase text-zinc-500">Test Mode</p>
             <h1 className="text-xl sm:text-2xl font-black uppercase leading-tight">
@@ -178,7 +178,7 @@ export default function TestModePage() {
         </nav>
 
         {!canFinish ? (
-          <p className="border-2 border-black bg-white p-2.5 text-center text-sm font-black rounded-xl shadow-[3px_3px_0_#111111]">
+          <p className="border-2 border-black bg-white dark:bg-zinc-900 p-2.5 text-center text-sm font-black rounded-xl shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] text-black dark:text-zinc-100 transition-colors duration-200">
             Answer all questions before viewing results.
           </p>
         ) : null}

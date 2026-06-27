@@ -9,11 +9,11 @@ type ModeButtonProps = {
 };
 
 const variantClasses = {
-  yellow: "bg-[#ffe156] hover:bg-[#ffe875]",
-  blue: "bg-[#6ecbff] hover:bg-[#8cd8ff]",
-  pink: "bg-[#ff7aa2] hover:bg-[#ff9bb9]",
-  green: "bg-[#54d66a] hover:bg-[#72e283]",
-  white: "bg-white hover:bg-zinc-50",
+  yellow: "bg-[#ffe156] hover:bg-[#ffe875] text-black",
+  blue: "bg-[#6ecbff] hover:bg-[#8cd8ff] text-black",
+  pink: "bg-[#ff7aa2] hover:bg-[#ff9bb9] text-black",
+  green: "bg-[#54d66a] hover:bg-[#72e283] text-black",
+  white: "bg-white hover:bg-zinc-50 text-black dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-100",
 };
 
 export function ModeButton({
@@ -23,7 +23,7 @@ export function ModeButton({
   variant = "yellow",
   disabled = false,
 }: ModeButtonProps) {
-  const className = `inline-flex min-h-11 items-center justify-center border-2 border-black px-4 py-2 text-center text-xs sm:text-sm font-black uppercase text-black rounded-xl shadow-[3px_3px_0_#111111] cursor-pointer transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0_#111111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1.5px_1.5px_0_#111111] ${variantClasses[variant]} ${
+  const className = `inline-flex min-h-11 items-center justify-center border-2 border-black px-4 py-2 text-center text-xs sm:text-sm font-black uppercase rounded-xl shadow-[3px_3px_0_#111111] cursor-pointer transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0_#111111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1.5px_1.5px_0_#111111] ${variantClasses[variant]} ${
     disabled ? "pointer-events-none opacity-50 shadow-none border-zinc-300" : ""
   }`;
 

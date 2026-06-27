@@ -6,8 +6,11 @@ import { ModeButton } from "@/components/ModeButton";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ConfirmModal } from "@/components/ConfirmModal";
 import { getCompletedCount, loadPassedIds, resetProgress } from "@/lib/quiz";
+import { useTheme } from "@/lib/theme";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 export default function LandingPage() {
+  const { theme, toggleTheme } = useTheme();
   const [completed, setCompleted] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const total = quizQuestions.length;
@@ -32,13 +35,33 @@ export default function LandingPage() {
   }
 
   return (
-    <main className="min-h-screen px-4 py-8 text-black sm:px-6 flex items-center justify-center">
+    <main className="min-h-screen px-4 py-8 text-black dark:text-white sm:px-6 flex items-center justify-center">
       <div className="w-full max-w-2xl flex flex-col gap-5 py-4">
-        <section className="border-2 border-black bg-white p-5 shadow-[4px_4px_0_#111111] sm:p-7 rounded-2xl">
-          <p className="mb-2.5 inline-block border-2 border-black bg-[#ff7aa2] px-2.5 py-0.5 text-xs font-black uppercase rounded-lg">
+        <div className="flex justify-end">
+          <button
+            onClick={toggleTheme}
+            className="flex items-center gap-2 border-2 border-black bg-white dark:bg-zinc-800 text-black dark:text-white px-4 py-2 font-black uppercase text-xs sm:text-sm rounded-xl shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0_#111111] dark:hover:shadow-[4.5px_4.5px_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1.5px_1.5px_0_#111111] dark:active:shadow-[1.5px_1.5px_0_#000000] transition-all duration-150"
+            title="Toggle Theme"
+          >
+            {theme === "light" ? (
+              <>
+                <FiMoon size={16} />
+                <span>Dark Mode</span>
+              </>
+            ) : (
+              <>
+                <FiSun size={16} />
+                <span>Light Mode</span>
+              </>
+            )}
+          </button>
+        </div>
+
+        <section className="border-2 border-black bg-white dark:bg-zinc-900 p-5 shadow-[4px_4px_0_#111111] dark:shadow-[4px_4px_0_#000000] sm:p-7 rounded-2xl transition-colors duration-200">
+          <p className="mb-2.5 inline-block border-2 border-black bg-[#ff7aa2] px-2.5 py-0.5 text-xs font-black uppercase rounded-lg text-black">
             Choose your mode
           </p>
-          <h1 className="text-4xl font-black uppercase leading-none sm:text-5xl">Quiz App</h1>
+          <h1 className="text-4xl font-black uppercase leading-none sm:text-5xl text-black dark:text-white">Quiz App</h1>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <ModeButton href="/full" variant="green">
               Full Mode
@@ -49,7 +72,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="border-2 border-black bg-[#6ecbff] p-5 shadow-[4px_4px_0_#111111] sm:p-6 rounded-2xl">
+        <section className="border-2 border-black bg-[#6ecbff] p-5 shadow-[4px_4px_0_#111111] sm:p-6 rounded-2xl text-black">
           <h2 className="mb-4 text-2xl font-black uppercase">Full Mode Summary</h2>
           <ProgressBar label="Completed" total={total} value={completed} />
           <div className="mt-4 grid gap-1 text-lg font-black">

@@ -102,9 +102,9 @@ export default function FullModePage() {
 
   if (!currentQuestion && completed >= total) {
     return (
-      <main className="min-h-screen bg-[#72e283]/20 backdrop-blur-[2px] px-4 py-8 text-black sm:px-6 flex items-center justify-center">
+      <main className="min-h-screen bg-[#72e283]/20 dark:bg-[#72e283]/5 backdrop-blur-[2px] px-4 py-8 text-black dark:text-zinc-100 sm:px-6 flex items-center justify-center">
         <div className="w-full max-w-2xl">
-          <section className="w-full border-2 border-black bg-white p-6 shadow-[4px_4px_0_#111111] sm:p-8 rounded-2xl">
+          <section className="w-full border-2 border-black bg-white dark:bg-zinc-900 p-6 shadow-[4px_4px_0_#111111] dark:shadow-[4px_4px_0_#000000] sm:p-8 rounded-2xl transition-colors duration-200">
             <h1 className="text-2xl font-black uppercase sm:text-3xl">You completed all questions!</h1>
             <p className="mt-4 text-lg font-black">
               Completed: {total} / {total}
@@ -131,9 +131,9 @@ export default function FullModePage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#8cd8ff]/20 backdrop-blur-[2px] px-4 py-6 text-black sm:px-6 flex justify-center">
+    <main className="min-h-screen bg-[#8cd8ff]/20 dark:bg-[#8cd8ff]/5 backdrop-blur-[2px] px-4 py-6 text-black dark:text-zinc-100 sm:px-6 flex justify-center">
       <div className="w-full max-w-2xl space-y-4">
-        <header className="flex flex-col gap-3 border-2 border-black bg-white p-3.5 shadow-[3px_3px_0_#111111] rounded-xl sm:flex-row sm:items-center sm:justify-between">
+        <header className="flex flex-col gap-3 border-2 border-black bg-white dark:bg-zinc-900 p-3.5 shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] rounded-xl sm:flex-row sm:items-center sm:justify-between transition-colors duration-200">
           <div>
             <p className="text-xs font-black uppercase text-zinc-500">Full Mode</p>
             <h1 className="text-xl sm:text-2xl font-black uppercase leading-tight">Master every question</h1>
@@ -147,7 +147,7 @@ export default function FullModePage() {
 
         {feedback ? (
           <div
-            className={`border-2 border-black p-3.5 text-md sm:text-lg font-black uppercase rounded-xl shadow-[3px_3px_0_#111111] ${
+            className={`border-2 border-black p-3.5 text-md sm:text-lg font-black uppercase rounded-xl shadow-[3px_3px_0_#111111] text-black ${
               feedback === "correct" ? "bg-[#72e283]" : "bg-[#ff9bb9]"
             }`}
           >

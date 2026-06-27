@@ -11,11 +11,11 @@ type ChoiceButtonProps = {
 };
 
 const stateClasses: Record<ChoiceState, string> = {
-  idle: "bg-white hover:bg-[#ffe875]",
-  selected: "bg-[#8cd8ff]",
-  correct: "bg-[#72e283] shadow-[#22a133]/20",
-  incorrect: "bg-[#ff9bb9] shadow-[#da3465]/20",
-  locked: "bg-zinc-50 border-zinc-300 opacity-60 pointer-events-none shadow-none",
+  idle: "bg-white hover:bg-[#ffe875] text-black dark:bg-zinc-900 dark:hover:bg-[#ffe875] dark:hover:text-black dark:text-zinc-100",
+  selected: "bg-[#8cd8ff] text-black",
+  correct: "bg-[#72e283] text-black shadow-[#22a133]/20",
+  incorrect: "bg-[#ff9bb9] text-black shadow-[#da3465]/20",
+  locked: "bg-zinc-50 border-zinc-300 opacity-60 pointer-events-none shadow-none text-black dark:bg-zinc-850 dark:border-zinc-700 dark:text-zinc-400",
 };
 
 export function ChoiceButton({
@@ -28,7 +28,7 @@ export function ChoiceButton({
   const isLocked = state === "locked";
   return (
     <button
-      className={`flex w-full items-center gap-3 group border-2 border-black p-3 text-left font-black text-black cursor-pointer rounded-xl shadow-[3px_3px_0_#111111] transition-all duration-150 ${
+      className={`flex w-full items-center gap-3 group border-2 border-black p-3 text-left font-black cursor-pointer rounded-xl shadow-[3px_3px_0_#111111] transition-all duration-150 ${
         isLocked
           ? ""
           : "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0_#111111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1.5px_1.5px_0_#111111]"
@@ -37,7 +37,7 @@ export function ChoiceButton({
       onClick={onClick}
       disabled={disabled || isLocked}
     >
-      <span className="flex size-8 shrink-0 items-center justify-center rounded-full border-2 border-black bg-white text-xs font-black text-black group-hover:bg-black group-hover:text-white transition duration-200">
+      <span className="flex size-8 shrink-0 items-center justify-center rounded-full border-2 border-black bg-white dark:bg-zinc-800 text-xs font-black text-black dark:text-zinc-100 group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition duration-200">
         {String.fromCharCode(65 + index)}
       </span>
       <span className="flex min-w-0 flex-1 flex-col gap-2">

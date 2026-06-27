@@ -5255,7 +5255,7 @@ export const quizQuestions: QuizQuestion[] = [
     "questionImage": "/image/img187.jpg",
     "choices": [
       {
-        "text": "Itonde , witegereze ni biba ngongwa ubaburire unitegura kuba wahagarara.",
+        "text": "Itonde , witegereze ni biba ngombwa ubaburire unitegura kuba wahagarara.",
         "correct": true
       },
       {

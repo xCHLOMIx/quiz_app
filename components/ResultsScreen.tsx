@@ -12,11 +12,11 @@ export function ResultsScreen({ score, total, onRetry, onReview }: ResultsScreen
   const passed = percentage >= 60;
 
   return (
-    <section className="border-2 border-black w-full bg-white p-5 sm:p-7 rounded-2xl shadow-[4px_4px_0_#111111]">
-      <div className={`mb-5 border-2 border-black p-4 py-3 rounded-xl ${passed ? "bg-[#54d66a]" : "bg-[#ff7aa2]"}`}>
+    <section className="border-2 border-black w-full bg-white dark:bg-zinc-900 p-5 sm:p-7 rounded-2xl shadow-[4px_4px_0_#111111] dark:shadow-[4px_4px_0_#000000] transition-colors duration-200">
+      <div className={`mb-5 border-2 border-black p-4 py-3 rounded-xl ${passed ? "bg-[#54d66a]" : "bg-[#ff7aa2]"} text-black`}>
         <p className="text-xl font-black uppercase">Grade: {passed ? "Pass" : "Fail"}</p>
       </div>
-      <div className="space-y-2 text-xl font-black">
+      <div className="space-y-2 text-xl font-black text-black dark:text-zinc-100">
         <p>
           Score: {score} / {total}
         </p>

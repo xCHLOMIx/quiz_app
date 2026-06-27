@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #faf4b7;
   --foreground: #111111;
+  --dot-color: #111111;
+}
+
+:root.dark,
+.dark {
+  --background: #121214;
+  --foreground: #f4f4f5;
+  --dot-color: rgba(255, 255, 255, 0.12);
 }
 
 @theme inline {
@@ -18,17 +28,28 @@
   border-left: 2px solid #111111;
 }
 
+:root.dark ::-webkit-scrollbar,
+.dark ::-webkit-scrollbar {
+  border-left: 2px solid #3f3f46;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #111111;
   border-radius: 4px;
 }
 
+:root.dark ::-webkit-scrollbar-thumb,
+.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+}
+
 body {
   background-color: var(--background);
-  background-image: radial-gradient(#111111 1.2px, transparent 1.2px);
+  background-image: radial-gradient(var(--dot-color) 1.2px, transparent 1.2px);
   background-size: 20px 20px;
   color: var(--foreground);
   font-family: var(--font-sans);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 button,

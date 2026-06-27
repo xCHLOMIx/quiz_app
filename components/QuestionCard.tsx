@@ -19,15 +19,15 @@ export function QuestionCard({
   disabled = false,
 }: QuestionCardProps) {
   return (
-    <section className="border-2 border-black bg-white p-4 sm:p-6 rounded-2xl shadow-[4px_4px_0_#111111]">
+    <section className="border-2 border-black bg-white dark:bg-zinc-900 p-4 sm:p-6 rounded-2xl shadow-[4px_4px_0_#111111] dark:shadow-[4px_4px_0_#000000] transition-colors duration-200">
       <div className="space-y-4">
-        <p className="text-lg sm:text-xl font-black leading-snug text-black">
+        <p className="text-lg sm:text-xl font-black leading-snug text-black dark:text-zinc-100">
           {question.questionText}
         </p>
         {question.questionImage ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            className="max-h-56 w-full border-2 border-black py-3 bg-white object-contain rounded-xl"
+            className="max-h-56 w-full border-2 border-black py-3 bg-white dark:bg-zinc-800 object-contain rounded-xl"
             src={question.questionImage}
             alt="Question reference"
           />
