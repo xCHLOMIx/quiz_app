@@ -28,7 +28,7 @@ export function Toast({ message, type, onClose, duration = 5000 }: ToastProps) {
 
   return (
     <div
-      className={`fixed top-4 left-1/2 z-50 w-full max-w-sm px-4 ${
+      className={`fixed top-4 left-1/2 z-50 w-full sm:w-max max-w-11/12 px-4 ${
         isExiting ? "animate-slide-up" : "animate-slide-down"
       }`}
     >
