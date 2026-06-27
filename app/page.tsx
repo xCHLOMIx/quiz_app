@@ -1,16 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { quizQuestions } from "@/data/questions";
 import { ModeButton } from "@/components/ModeButton";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ConfirmModal } from "@/components/ConfirmModal";
 import { getCompletedCount, loadPassedIds, resetProgress } from "@/lib/quiz";
 import { useTheme } from "@/lib/theme";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { useUser } from "@/lib/user";
+import { FiSun, FiMoon, FiUser } from "react-icons/fi";
 
 export default function LandingPage() {
   const { theme, toggleTheme } = useTheme();
+  const { email } = useUser();
   const [completed, setCompleted] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const total = quizQuestions.length;
@@ -37,21 +40,32 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen px-4 py-8 text-black dark:text-white sm:px-6 flex items-center justify-center">
       <div className="w-full max-w-2xl flex flex-col gap-5 py-4">
-        <div className="flex justify-end">
+        <div className="flex justify-between items-center">
+          <Link
+            href="/account"
+            className="flex items-center gap-2 border-2 border-black bg-white dark:bg-zinc-800 text-black dark:text-white px-4 py-2 font-black uppercase text-xs sm:text-sm rounded-xl shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0_#111111] dark:hover:shadow-[4.5px_4.5px_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1.5px_1.5px_0_#111111] dark:active:shadow-[1.5px_1.5px_0_#000000] transition-all duration-150"
+            title="Account"
+          >
+            <FiUser size={16} />
+            <span className="hidden sm:inline">
+              {email ? "Profile" : "Account"}
+            </span>
+          </Link>
+
           <button
             onClick={toggleTheme}
-            className="flex items-center gap-2 border-2 border-black bg-white dark:bg-zinc-800 text-black dark:text-white px-4 py-2 font-black uppercase text-xs sm:text-sm rounded-xl shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0_#111111] dark:hover:shadow-[4.5px_4.5px_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1.5px_1.5px_0_#111111] dark:active:shadow-[1.5px_1.5px_0_#000000] transition-all duration-150"
+            className="flex items-center gap-2 border-2 border-black bg-white dark:bg-zinc-800 text-black dark:text-white px-4 py-2.5 font-black uppercase text-xs sm:text-sm rounded-xl shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0_#111111] dark:hover:shadow-[4.5px_4.5px_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1.5px_1.5px_0_#111111] dark:active:shadow-[1.5px_1.5px_0_#000000] transition-all duration-150"
             title="Toggle Theme"
           >
             {theme === "light" ? (
               <>
                 <FiMoon size={16} />
-                <span>Dark Mode</span>
+                <span className="hidden sm:inline">Dark Mode</span>
               </>
             ) : (
               <>
                 <FiSun size={16} />
-                <span>Light Mode</span>
+                <span className="hidden sm:inline">Light Mode</span>
               </>
             )}
           </button>

@@ -7,6 +7,7 @@ import { ModeButton } from "@/components/ModeButton";
 import { ProgressBar } from "@/components/ProgressBar";
 import { QuestionCard } from "@/components/QuestionCard";
 import { ConfirmModal } from "@/components/ConfirmModal";
+import { useUser } from "@/lib/user";
 import {
   getCompletedCount,
   getRemainingQuestions,
@@ -29,6 +30,7 @@ function createSessionQuestions(questions: QuizQuestion[]): SessionQuestion[] {
 }
 
 export default function FullModePage() {
+  const { email } = useUser();
   const [passedIds, setPassedIds] = useState<number[]>([]);
   const [queue, setQueue] = useState<SessionQuestion[]>([]);
   const [selectedChoice, setSelectedChoice] = useState<QuizChoice | null>(null);
@@ -59,6 +61,14 @@ export default function FullModePage() {
       setPassedIds(nextPassedIds);
       savePassedIds(nextPassedIds);
       setFeedback("correct");
+
+      if (email) {
+        fetch("/api/auth/sync", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, passedIds: nextPassedIds }),
+        }).catch((err) => console.error("Sync failed:", err));
+      }
 
       window.setTimeout(() => {
         setQueue((currentQueue) => currentQueue.slice(1));
@@ -98,6 +108,14 @@ export default function FullModePage() {
     setSelectedChoice(null);
     setFeedback(null);
     setIsModalOpen(false);
+
+    if (email) {
+      fetch("/api/auth/sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, passedIds: [] }),
+      }).catch((err) => console.error("Reset sync failed:", err));
+    }
   }
 
   if (!currentQuestion && completed >= total) {
