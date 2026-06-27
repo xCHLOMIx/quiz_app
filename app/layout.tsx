@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import { ThemeProvider } from "@/lib/theme";
 import { UserProvider } from "@/lib/user";
 import "./globals.css";
@@ -48,9 +47,8 @@ export default function RootLayout({
             `
           }}
         />
-        <Script
-          id="intercept-extension-attrs"
-          strategy="beforeInteractive"
+        <script
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `
               (function() {

@@ -317,7 +317,7 @@ export default function AccountPage() {
                           maxLength={1}
                           required
                           disabled={isSubmitting}
-                          className="border-2 border-black bg-white dark:bg-zinc-800 text-black dark:text-white size-12 sm:size-14 text-center text-xl sm:text-2xl font-black rounded-xl shadow-[2px_2px_0_#111111] dark:shadow-[2px_2px_0_#000000] focus:outline-none focus:bg-gray-100 dark:focus:bg-zinc-700 transition"
+                          className="border-2 border-black bg-white dark:bg-zinc-800 text-black dark:text-white size-12 sm:size-14 text-center text-xl sm:text-2xl font-black rounded-xl shadow-[2px_2px_0_#111111] dark:shadow-[2px_2px_0_#000000] focus:outline-none focus:bg-gray-100 dark:focus:bg-zinc-700 transition caret-transparent"
                         />
                       ))}
                     </div>
