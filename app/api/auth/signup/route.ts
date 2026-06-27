@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/db";
 import { hashPassword } from "@/lib/hash";
+import { quizQuestions } from "@/data/questions";
 
 export async function POST(request: Request) {
   try {
@@ -49,10 +50,15 @@ export async function POST(request: Request) {
       ? passedIds.filter((id): id is number => Number.isFinite(id))
       : [];
 
+    const totalQuestions = quizQuestions.length;
+    const isCompleted = validatedPassedIds.length === totalQuestions;
+
     await db.collection("users").insertOne({
       email: emailStr,
       passcodeHash,
       passedIds: validatedPassedIds,
+      fullModeCompleted: isCompleted,
+      fullModeCompletions: isCompleted ? 1 : 0,
       createdAt: new Date(),
     });
 

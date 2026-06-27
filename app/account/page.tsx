@@ -29,6 +29,15 @@ export default function AccountPage() {
   // Compute stats for logged in user
   const [completedCount, setCompletedCount] = useState(0);
   const totalQuestions = quizQuestions.length;
+  const [fullModeCompletions, setFullModeCompletions] = useState(0);
+  const [recentTests, setRecentTests] = useState<{
+    id: string;
+    score: number;
+    total: number;
+    percentage: number;
+    createdAt: string;
+  }[]>([]);
+  const [isStatsLoading, setIsStatsLoading] = useState(false);
 
   // Conflict modal states
   const [conflictData, setConflictData] = useState<{
@@ -75,6 +84,18 @@ export default function AccountPage() {
   useEffect(() => {
     if (email) {
       setCompletedCount(loadPassedIds().length);
+
+      setIsStatsLoading(true);
+      fetch(`/api/user/profile?email=${encodeURIComponent(email)}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            setFullModeCompletions(data.fullModeCompletions || 0);
+            setRecentTests(data.recentTests || []);
+          }
+        })
+        .catch((err) => console.error("Failed to load stats:", err))
+        .finally(() => setIsStatsLoading(false));
     }
   }, [email]);
 
@@ -220,7 +241,7 @@ export default function AccountPage() {
             <FiArrowLeft size={20} />
           </Link>
 
-          <button
+          {/* <button
             onClick={toggleTheme}
             className="flex items-center gap-2 border-2 border-black bg-white dark:bg-zinc-800 text-black dark:text-white px-4 py-2.5 font-black uppercase text-xs sm:text-sm rounded-xl shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0_#111111] dark:hover:shadow-[4.5px_4.5px_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1.5px_1.5px_0_#111111] dark:active:shadow-[1.5px_1.5px_0_#000000] transition-all duration-150"
             title="Toggle Theme"
@@ -236,7 +257,7 @@ export default function AccountPage() {
                 <span className="hidden sm:inline">Light Mode</span>
               </>
             )}
-          </button>
+          </button> */}
         </header>
 
         {/* Content Container */}
@@ -257,12 +278,68 @@ export default function AccountPage() {
               </div>
             </div>
 
-            <div className="border-2 border-black bg-gray-100 p-4 rounded-xl shadow-[3px_3px_0_#111111] text-black">
-              <h2 className="text-md font-black uppercase mb-1">Full Mode Progress Backup</h2>
-              <p className="text-xs font-medium mb-3">Your progress is automatically saved to the database.</p>
-              <div className="text-2xl font-black">
-                {completedCount} <span className="text-sm font-black">/ {totalQuestions} Questions Passed</span>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="border-2 border-black bg-gray-100 dark:bg-zinc-800 p-4 rounded-xl shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] text-black dark:text-zinc-100">
+                <h2 className="text-sm font-black uppercase mb-1">Full Mode Progress</h2>
+                <p className="text-[10px] font-semibold text-zinc-500 dark:text-zinc-400 mb-3">Your questions passed, synced to DB.</p>
+                <div className="text-xl sm:text-2xl font-black">
+                  {completedCount} <span className="text-xs sm:text-sm font-black">/ {totalQuestions} Passed</span>
+                </div>
               </div>
+
+              <div className="border-2 border-black bg-[#faf4b7] dark:bg-[#faf4b7]/10 p-4 rounded-xl shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] text-black dark:text-zinc-100">
+                <h2 className="text-sm font-black uppercase mb-1">Full Mode Completions</h2>
+                <p className="text-[10px] font-semibold text-zinc-500 dark:text-zinc-400 mb-3">Times you cleared all questions.</p>
+                <div className="text-xl sm:text-2xl font-black">
+                  {isStatsLoading ? "..." : fullModeCompletions} <span className="text-xs sm:text-sm font-black">{fullModeCompletions === 1 ? "Completion" : "Completions"}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Test History */}
+            <div className="border-2 border-black bg-white dark:bg-zinc-800/50 p-4 rounded-xl shadow-[3px_3px_0_#111111] dark:shadow-[3px_3px_0_#000000] text-black dark:text-zinc-100">
+              <h2 className="text-sm font-black uppercase mb-3 border-b-2 border-black pb-1.5">Recent Test History (Last 5)</h2>
+              
+              {isStatsLoading ? (
+                <p className="text-xs font-bold text-center py-4">Loading history...</p>
+              ) : recentTests.length === 0 ? (
+                <div className="text-center py-4">
+                  <p className="text-xs font-bold text-zinc-500 mb-3">No tests completed yet.</p>
+                  <Link href="/test" className="inline-block border-2 border-black bg-[#8cd8ff] text-black font-black uppercase text-[10px] px-3.5 py-2 rounded-lg shadow-[2px_2px_0_#111111] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[3px_3px_0_#111111] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0_#111111] transition-all cursor-pointer">
+                    Take your first test
+                  </Link>
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  {recentTests.map((test) => {
+                    const isPassed = test.percentage >= 60;
+                    return (
+                      <div key={test.id} className="flex flex-col sm:flex-row sm:items-center justify-between border-2 border-black bg-gray-50 dark:bg-zinc-800 p-2.5 rounded-lg gap-2 text-xs font-bold">
+                        <div className="flex items-center gap-2">
+                          <div className={`border border-black text-black px-2 py-0.5 rounded text-[9px] font-black uppercase ${isPassed ? "bg-[#72e283]" : "bg-[#ff9bb9]"}`}>
+                            {isPassed ? "Pass" : "Fail"}
+                          </div>
+                          <div>
+                            <span className="text-zinc-500 dark:text-zinc-400">Score: </span>
+                            <span className="font-black text-sm">{test.score}/{test.total}</span>
+                            <span className="text-zinc-400 mx-1">|</span>
+                            <span className="font-black text-sm text-black dark:text-zinc-100">{test.percentage}%</span>
+                          </div>
+                        </div>
+                        <div className="text-[10px] text-zinc-500 dark:text-zinc-400 sm:text-end font-semibold">
+                          {new Date(test.createdAt).toLocaleDateString(undefined, {
+                            month: "short",
+                            day: "numeric",
+                            year: "numeric",
+                            hour: "2-digit",
+                            minute: "2-digit",
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             <div className="pt-2">

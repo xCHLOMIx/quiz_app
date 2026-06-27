@@ -7,6 +7,7 @@ import { ProgressBar } from "@/components/ProgressBar";
 import { QuestionCard } from "@/components/QuestionCard";
 import { ResultsScreen } from "@/components/ResultsScreen";
 import { getRandomQuestions, shuffleArray } from "@/lib/quiz";
+import { useUser } from "@/lib/user";
 
 type TestQuestion = QuizQuestion & {
   shuffledChoices: QuizChoice[];
@@ -20,6 +21,7 @@ function createTestQuestions(): TestQuestion[] {
 }
 
 export default function TestModePage() {
+  const { email } = useUser();
   const [questions, setQuestions] = useState<TestQuestion[]>(createTestQuestions);
   const [answers, setAnswers] = useState<(QuizChoice | null)[]>(() =>
     Array.from({ length: Math.min(20, createTestQuestions().length) }, () => null),
@@ -38,6 +40,21 @@ export default function TestModePage() {
     setShowResults(false);
     setReviewMode(false);
     setReviewIndex(0);
+  }
+
+  function handleFinishTest() {
+    setShowResults(true);
+    if (email) {
+      fetch("/api/test/result", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          score,
+          total: questions.length,
+        }),
+      }).catch((err) => console.error("Failed to save test result:", err));
+    }
   }
 
   const answeredCount = answers.filter(Boolean).length;
@@ -172,7 +189,7 @@ export default function TestModePage() {
           >
             Next
           </ModeButton>
-          <ModeButton onClick={() => setShowResults(true)} variant="green" disabled={!canFinish}>
+          <ModeButton onClick={handleFinishTest} variant="green" disabled={!canFinish}>
             Finish Test
           </ModeButton>
         </nav>
