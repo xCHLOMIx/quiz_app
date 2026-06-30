@@ -5182,7 +5182,7 @@ export const quizQuestions: QuizQuestion[] = [
         "correct": true
       },
       {
-        "text": "Umuyobozi w’ikinyabizigaagomba kuvuza ihoni agukomeza"
+        "text": "Umuyobozi w’ikinyabiziga agomba kuvuza ihoni agakomeza"
       },
       {
         "text": "Umuyobozi w’ikinyabiziga agomba kugabanya umuvuduko"
@@ -5857,7 +5857,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 305,
-    "questionText": "Niki umuyobozi w’ikinyabiziga yakora igihe agize uruhare mu mpanuka yo mu muhanda , aho ntawakometese ariko ibinyabiziga bikaba byateza icyago cyangwa byafunze umuhanda?",
+    "questionText": "Niki umuyobozi w’ikinyabiziga yakora igihe agize uruhare mu mpanuka yo mu muhanda , aho ntawakomeretse ariko ibinyabiziga bikaba byateza icyago cyangwa byafunze umuhanda?",
     "choices": [
       {
         "text": "Gushushanya aho zagonganiye no kuzishyira kuruhande",
@@ -7055,7 +7055,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     "id": 367,
-    "questionText": "Ndashaka kugata ibumoso. Imodoka y’icyatsi yaje irahagarara. Ninde ufite uburenganzira bwo gutambuka mbere?",
+    "questionText": "Ndashaka gukata ibumoso. Imodoka y’icyatsi yaje irahagarara. Ninde ufite uburenganzira bwo gutambuka mbere?",
     "questionImage": "/image/img278.jpg",
     "choices": [
       {
